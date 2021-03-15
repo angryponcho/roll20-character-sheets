@@ -3,45 +3,45 @@
       <label>Character Name<input name="attr_character_name" type="text"/></label>
     </div>
     <div class="charbox">
-      <div class="race"> <input name="attr_race" type="text"/> <label>Race</label> </div>
-      <div class="level"> <input name="attr_level" type="text"/> <label>Level</label> </div> 
-      <div class="pronouns"> <input name="attr_pronouns" type="text"/> <label>Pronouns</label> </div> 
-      <div class="playername"> <input name="attr_player_name" type="text"/> <label>Player Name</label> </div>
-      <div class="alignment"> <input name="attr_alignment" type="text"/> <label>Alignment</label> </div>
-      <div class="charbg"> <input name="attr_character_bg" type="text"/> <label>Background</label> </div>
+      <div class="race"> <input name="attr_race" type="text"/> <span>Race</span> </div>
+      <div class="level"> <input name="attr_level" type="text"/> <span>Level</span> </div> 
+      <div class="pronouns"> <input name="attr_pronouns" type="text"/> <span>Pronouns</span> </div> 
+      <div class="playername"> <input name="attr_player_name" type="text"/> <span>Player Name</span> </div>
+      <div class="alignment"> <input name="attr_alignment" type="text"/> <span>Alignment</span> </div>
+      <div class="charbg"> <input name="attr_character_bg" type="text"/> <span>Background</span> </div>
     </div>
 
     <div class="sidebar">
       <div class="scores">
         <div class="str ability-score">
-          <label>STR</label>
-          <p>+5</p>
-          <input type="" name="attr_strength_score" />
+          <label class="wordbutton strlabel">STR</label>
+          <input class="strmod score-mod" type="text" name="attr_str_mod" value="@{str_mod}"/>
+          <input class="score strscore" type="text" name="attr_str"/>
         </div>
         <div class="dex ability-score">
-          <label>DEX</label>
-          <p>+5</p>
-          <input type="" name="attr_dexterity_score" />
+          <label class="wordbutton dexlabel">DEX</label>     
+          <input class="dexmod score-mod" type="text" name="attr_dex_mod" value="@{dex_mod}"/>
+          <input class="score dexscore" type="text" name="attr_dex"/>
         </div>
         <div class="con ability-score">
-          <label>CON</label>
-          <p>+5</p>
-          <input type="" name="attr_constitution_score" />
+          <label class="wordbutton conlabel">CON</label>
+          <input class="conmod score-mod" type="text" name="attr_con_mod" value="@{con_mod}"/>
+          <input class="score conscore" type="text" name="attr_con"/>
         </div>
         <div class="int ability-score">
-          <label>INT</label>
-          <p>+5</p>
-          <input type="" name="attr_intelligence_score" />
+          <label class="wordbutton intlabel">INT</label>
+          <input class="intmod score-mod" type="text" name="attr_int_mod" value="@{int_mod}"/>
+          <input class="score intscore" type="text" name="attr_int"/>
         </div>
         <div class="wis ability-score">
-          <label>WIS</label>
-          <p>+5</p>
-          <input type="" name="attr_wisdom_score" />
+          <label class="wordbutton wislabel">WIS</label>
+          <input class="wismod score-mod" type="text" name="attr_wis_mod" value="@{wis_mod}"/>
+          <input class="score wisscore" type="text" name="attr_wis"/>
         </div>
         <div class="cha ability-score">
-          <label>CHA</label>
-          <p>+5</p>
-          <input type="" name="attr_charisma_score" />
+          <label class="wordbutton chalabel">CHA</label>
+          <input class="chamod score-mod" type="text" name="attr_cha_mod" value="@{cha_mod}"/>
+          <input class="score chascore" type="text" name="attr_cha"/>
         </div>
       </div>
       <div class="weapons">
@@ -56,121 +56,292 @@
       <div class="saves section">
         <label class="savelabel">Saving Throws</label>
 
-        <input type="checkbox" class="strcheck"/>
-        <span class="strmod">0</span>
+        <input type="checkbox" class="strprof"/>
+        <span class="strsavemod">0</span>
         <button class="strbutton wordbutton">Strength</button>
 
-        <input type="checkbox" class="dexcheck"/>
-        <span class="dexmod">0</span>
+        <input type="checkbox" class="dexprof"/>
+        <span class="dexsavemod">0</span>
         <button class="dexbutton wordbutton">Dexterity</button>
 
-        <input type="checkbox" class="concheck"/>
-        <span class="conmod">0</span>
+        <input type="checkbox" class="conprof"/>
+        <span class="consavemod">0</span>
         <button class="conbutton wordbutton">Constitution</button>
 
-        <input type="checkbox" class="intcheck"/>
-        <span class="intmod">0</span>
+        <input type="checkbox" class="intprof"/>
+        <span class="intsavemod">0</span>
         <button class="intbutton wordbutton">Intelligence</button>
 
-        <input type="checkbox" class="wischeck"/>
-        <span class="wismod">0</span>
+        <input type="checkbox" class="wisprof"/>
+        <span class="wissavemod">0</span>
         <button class="wisbutton wordbutton">Wisdom</button>
 
-        <input type="checkbox" class="chacheck"/>
-        <span class="chamod">0</span>
+        <input type="checkbox" class="chaprof"/>
+        <span class="chasavemod">0</span>
         <button class="chabutton wordbutton">Charisma</button>
       </div>
 
       <div class="skilllist section">
         <label class="skillslabel">Skills</label>
 
-        <input type="checkbox" class="acrocheck"/>
+        <input type="checkbox" class="acroprof"/>
         <span class="acromod">0</span>
         <button class="acrobutton wordbutton">Acrobatics</button>
+        <select class="acroability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="athlcheck"/>
+        <input type="checkbox" class="athlprof"/>
         <span class="athlmod">0</span>
         <button class="athlbutton wordbutton">Athletics</button>
-        
-        <input type="checkbox" class="anhncheck"/>
+        <select class="athlability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
+
+        <input type="checkbox" class="anhnprof"/>
         <span class="anhnmod">0</span>
         <button class="anhnbutton wordbutton">Animal Handling</button>
+        <select class="anhnability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="insicheck"/>
+        <input type="checkbox" class="insiprof"/>
         <span class="insimod">0</span>
         <button class="insibutton wordbutton">Insight</button>
+        <select class="insiability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="inticheck"/>
+        <input type="checkbox" class="intiprof"/>
         <span class="intimod">0</span>
         <button class="intibutton wordbutton">Intimidation</button>
+        <select class="intiability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="knowcheck"/>
+        <input type="checkbox" class="knowprof"/>
         <span class="knowmod">0</span>
         <button class="knowbutton wordbutton">Knowledge</button>
+        <select class="knowability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="medicheck"/>
+        <input type="checkbox" class="mediprof"/>
         <span class="medimod">0</span>
         <button class="medibutton wordbutton">Medicine</button>
+        <select class="mediability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="natrcheck"/>
+        <input type="checkbox" class="natrprof"/>
         <span class="natrmod">0</span>
         <button class="natrbutton wordbutton">Nature</button>
+        <select class="athlacroability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="srchcheck"/>
+        <input type="checkbox" class="srchprof"/>
         <span class="srchmod">0</span>
         <button class="srchbutton wordbutton">Search</button>
+        <select class="srchability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="spcfcheck"/>
+        <input type="checkbox" class="spcfprof"/>
         <span class="spcfmod">0</span>
         <button class="spcfbutton wordbutton">Speechcraft</button>
+        <select class="spcfability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
         
-        <input type="checkbox" class="stlhcheck"/>
+        <input type="checkbox" class="stlhprof"/>
         <span class="stlhmod">0</span>
         <button class="stlhbutton wordbutton">Stealth</button>
+        <select class="stlhability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="swimcheck"/>
+        <input type="checkbox" class="swimprof"/>
         <span class="swimmod">0</span>
-        <button class="swimbutton wordbutton">Swimming</button>   
-
+        <button class="swimbutton wordbutton">Swimming</button>
+        <select class="swimability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
       </div>
+
+      <div class="tools section">
+        <label class="toolslabel">Tools</label>
+
+        <input type="checkbox" class="alchemistsprof"/>
+        <span class="alchemistsmod">0</span>
+        <button class="alchemistsbutton wordbutton">Alchemist's Supplies</button>
+
+        <input type="checkbox" class="brewersprof"/>
+        <span class="brewersmod">0</span>
+        <button class="brewersbutton wordbutton">Brewers's Supplies</button>
+
+        <input type="checkbox" class="calligraphersprof"/>
+        <span class="calligraphersmod">0</span>
+        <button class="calligraphersbutton wordbutton">Calligrapher's Supplies</button>
+
+        <input type="checkbox" class="carpentersprof"/>
+        <span class="carpentersmod">0</span>
+        <button class="carpentersbutton wordbutton">Carpenter's Tools</button>
+
+        <input type="checkbox" class="cartographersprof"/>
+        <span class="cartographersmod">0</span>
+        <button class="cartographersbutton wordbutton">Cartographer's Tools</button>
+
+        <input type="checkbox" class="cobblersprof"/>
+        <span class="cobblersmod">0</span>
+        <button class="cobblersbutton wordbutton">Cobbler's Tools</button>
+
+        <input type="checkbox" class="cooksprof"/>
+        <span class="cooksmod">0</span>
+        <button class="cooksbutton wordbutton">Cook's Utensils</button>
+
+        <input type="checkbox" class="glassblowersprof"/>
+        <span class="glassblowersmod">0</span>
+        <button class="glassblowersbutton wordbutton">Glassblower's Tools</button>
+
+        <input type="checkbox" class="jewelersprof"/>
+        <span class="jewelersmod">0</span>
+        <button class="jewelersbutton wordbutton">Jeweler's Tools</button>
+
+        <input type="checkbox" class="leatherworkersprof"/>
+        <span class="leatherworkersmod">0</span>
+        <button class="leatherworkersbutton wordbutton">Leatherworker's Tools</button>
+
+        <input type="checkbox" class="masonsprof"/>
+        <span class="masonsmod">0</span>
+        <button class="masonsbutton wordbutton">Mason's Tools</button>
+
+        <input type="checkbox" class="musicprof"/>
+        <span class="musicmod">0</span>
+        <button class="musicbutton wordbutton">Musical Instrument</button>
+
+        <input type="checkbox" class="paintersprof"/>
+        <span class="paintersmod">0</span>
+        <button class="paintersbutton wordbutton">Painter's Supplies</button>
+
+        <input type="checkbox" class="pottersprof"/>
+        <span class="pottersmod">0</span>
+        <button class="pottersbutton wordbutton">Potter's Supplies</button>
+
+        <input type="checkbox" class="smithsprof"/>
+        <span class="smithsmod">0</span>
+        <button class="smithsbutton wordbutton">Smith's Tools</button>
+
+        <input type="checkbox" class="tinkersprof"/>
+        <span class="tinkersmod">0</span>
+        <button class="tinkersbutton wordbutton">Tinker's Tools</button>
+
+        <input type="checkbox" class="weaversprof"/>
+        <span class="weaversmod">0</span>
+        <button class="weaversbutton wordbutton">Weaver's Supplies</button>
+
+        <input type="checkbox" class="woodcarversprof"/>
+        <span class="woodcarversmod">0</span>
+        <button class="woodcarversbutton wordbutton">Woodcarver's Tools</button>
+      </div>  
     </div>
 
     <div class="core">
       <div class="vitals">
         <div class="insp vital vital-narrow">
-          <input type="checkbox" class="inspcheck">
+          <input type="checkbox" class="inspprof" name="attr_insp">
           <label>INSP</label>
         </div>
         <div class="prof vital vital-narrow">
-          <span>+5</span>
+          <span name="attr_prof">+5</span>
           <label>PROF</label>
         </div>
         <div class="ac vital">
           <label>AC</label>
-          <input type="text">
+          <input name="attr_ac" type="text">
         </div>
         <div class="init vital">
           <label>INIT</label>
-          <input type="text">
+          <input name="attr_init_mod" type="text">
         </div>
         <div class="speed vital">
           <label>SPEED</label>
-          <input type="text">
+          <input name="attr_speed" type="text">
         </div>
         <div class="hpmax vital">
           <label>MAX HP</label>
-          <input type="text">
+          <input name="attr_max_hp" type="text">
         </div>
         <div class="hpcurr vital">
           <label>Hit Points</label>
-          <input type="text">
+          <input name="attr_current_hp" type="text">
         </div>
         <div class="hptemp vital">   
           <label>TEMP HP</label>
-          <input type="text">       
+          <input name="attr_temp_hp" type="text">       
         </div>
         <div class="hitdice vital">
-          <input type="text">
+          <input name="attr_hit_dice" type="text">
           <label>HIT DICE</label>
         </div>
         <div class="deathsv vital">
@@ -189,15 +360,101 @@
       <div class="inventory section">Inventory</div>  
     </div>
 
-    <div class="bio section">
-      <label>Bio</label>
-
-      <label>Character name: <input name="attr_character_name" type="text"/></label>
-
-
+    <div class="bio">
+      <div class="levels section"></div>
+      <div class="appearance"> 
+        <label class="appearancelabel">APPEARANCE</label>     
+        <div class="age"> <input name="attr_age" type="text"/> <span>Age</span> </div>
+        <div class="size"> <input name="attr_size" type="text"/> <span>Size</span> </div>
+        <div class="charheight"> <input name="attr_height" type="text"/> <span>Height</span> </div>
+        <div class="charweight"> <input name="attr_weight" type="text"/> <span>Weight</span> </div>
+        <div class="eyes"> <input name="attr_eyes" type="text"/> <span>Eyes</span> </div>
+        <div class="hair"> <input name="attr_hair" type="text"/> <span>Hair</span> </div>
+        <div class="skin"> <input name="attr_skin" type="text"/> <span>Skin</span> </div>
+        <div class="marks"> <input name="attr_marks" type="text"/> <span>Marks</span> </div>
+      </div>
+      <div class="personality">   
+        <div class="trait"> <span>TRAIT</span> <textarea name="attr_trait"></textarea> </div>
+        <div class="ideal"> <span>IDEAL</span> <textarea name="attr_ideal"></textarea> </div>
+        <div class="bond"> <span>BOND</span> <textarea name="attr_bond"></textarea> </div>
+        <div class="flaw"> <span>FLAW</span> <textarea name="attr_flaw"></textarea> </div>
+      </div>
+      <div class="languages section"></div>
     </div>
 
-    <div class="footer section">
-      <span>Generic copyright disclaimer</span>
-    </div>
 </div>
+
+<script type="text/worker">
+  
+  on("change:str", function() {
+    getAttrs(["str"], function(values) {
+      var strMod = Math.floor((values.str - 10) / 2);
+      if(strMod > 0){
+        var plus = "+";
+        strMod = plus.concat(strMod);
+      }
+
+      setAttrs({ str_mod: strMod });
+    });
+  });
+
+  on("change:dex", function() {
+    getAttrs(["dex"], function(values) {
+      var dexMod = Math.floor((values.dex - 10) / 2);
+      if(dexMod > 0){
+        var plus = "+";
+        dexMod = plus.concat(dexMod);
+      }
+
+      setAttrs({ dex_mod: dexMod });
+    });
+  });
+
+  on("change:con", function() {
+    getAttrs(["con"], function(values) {
+      var conMod = Math.floor((values.con - 10) / 2);
+      if(conMod > 0){
+        var plus = "+";
+        conMod = plus.concat(conMod);
+      }
+
+      setAttrs({ con_mod: conMod });
+    });
+  });
+
+  on("change:int", function() {
+    getAttrs(["int"], function(values) {
+      var intMod = Math.floor((values.int - 10) / 2);
+      if(intMod > 0){
+        var plus = "+";
+        intMod = plus.concat(intMod);
+      }
+
+      setAttrs({ int_mod: intMod });
+    });
+  });
+
+  on("change:wis", function() {
+    getAttrs(["wis"], function(values) {
+      var wisMod = Math.floor((values.wis - 10) / 2);
+      if(wisMod > 0){
+        var plus = "+";
+        wisMod = plus.concat(wisMod);
+      }
+
+      setAttrs({ wis_mod: wisMod });
+    });
+  });
+
+  on("change:cha", function() {
+    getAttrs(["cha"], function(values) {
+      var chaMod = Math.floor((values.cha - 10) / 2);
+      if(chaMod > 0){
+        var plus = "+";
+        chaMod = plus.concat(chaMod);
+      }
+
+      setAttrs({ cha_mod: chaMod });
+    });
+  });
+</script>
