@@ -1,0 +1,482 @@
+.sheet-main {
+  display: grid;
+  min-width: 800px;
+  grid-gap: 3px;
+  grid-template-columns: 90px 230px 230px 230px;
+  grid-template-rows: 130px 1fr 30px;
+  grid-template-areas:"header  header  header  header"
+                      "sidebar  skills  core  bio"
+                      "footer  footer  footer  footer";
+}
+
+/*---HEADER---*/
+.sheet-header {
+  grid-area: header;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/CharScroll.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-charbox {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/CharBox.svg");
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-column-gap: 3px;
+  padding-top: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 40px 40px;
+  grid-template-areas:"race level pronouns"
+                      "playername alignment charbg";
+}
+
+.sheet-charbox input {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 0px;
+}
+
+.sheet-charbox label {
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 8pt;
+  padding: 0px 0px 0px 0px;
+}
+
+.sheet-pronouns { grid-area: pronouns;
+  justify-content: center; }
+.sheet-race { grid-area: race; }
+.sheet-level { grid-area: level; }
+.sheet-playername { grid-area: playername; }
+.sheet-alignment { grid-area: alignment; }
+.sheet-charbg { grid-area: charbg; }
+
+
+.sheet-header label {
+  padding: 55px 0px 0px 55px;
+}
+
+.sheet-header input {
+  background: transparent;
+  border: none;
+}
+
+/*---SIDEBAR---*/
+.sheet-sidebar {
+  grid-area: sidebar;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 600px 1fr 1fr;
+  grid-template-areas:"scores"
+                      "weapons"
+                      "armor";
+}
+
+/*---SIDEBAR - SCORES---*/
+.sheet-scores {
+  grid-area: scores;
+  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-back.svg");
+  background-repeat: no-repeat;
+  height: 600px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  padding-right: 2px;
+  padding-left: 2px;
+
+  display: grid;
+  grid-template-columns: 80px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:"str"
+                      "dex"
+                      "con"
+                      "int"
+                      "wis"
+                      "cha";
+}
+
+.sheet-str {
+  grid-area: str;
+  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-STR.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-dex {
+  grid-area: dex;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-DEX.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-con {
+  grid-area: con;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-CNS.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-int {
+  grid-area: int;  
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-INT.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-wis {
+  grid-area: wis;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-WIS.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-cha {
+  grid-area: cha;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-CHA.svg");
+  background-repeat: no-repeat;
+}
+
+.sheet-ability-score label {
+  padding-top: 5px;
+  font-size: 16pt;
+  width: 100%;
+  text-align: center;
+}
+
+.sheet-ability-score input {
+  font-size: 10pt;
+  background: transparent;
+  border: none;
+  width: 90px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.sheet-ability-score p {
+  padding-top: 5px;
+  font-size: 20pt;
+  width: 90px;
+  text-align: center;
+  margin: 0px;
+}
+
+/*---SKILLS---*/
+.sheet-skills {
+  grid-area: skills;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:"saves"
+                      "skilllist";
+}
+
+.sheet-saves {
+  grid-area: saves;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:"savelabel savelabel savelabel"
+                      "strcheck strmod strbutton"
+                      "dexcheck dexmod dexlabel"
+                      "concheck conmod conbutton"
+                      "intcheck intmod intbutton"
+                      "wischeck wismod wisbutton"
+                      "chacheck chamod chalabel";
+}
+
+.sheet-savelabel {
+  grid-area: savelabel;   
+  margin: auto;
+  text-align: center;
+}
+
+.sheet-strcheck { grid-area: strcheck; }
+.sheet-strmod { grid-area: strmod; }
+.sheet-strbutton { grid-area: strbutton; }
+
+.sheet-dexcheck { grid-area: dexcheck; }
+.sheet-dexmod { grid-area: dexmod; }
+.sheet-dexlabel { grid-area: dexlabel; }
+
+.sheet-concheck { grid-area: concheck; }
+.sheet-conmod { grid-area: conmod; }
+.sheet-conbutton { grid-area: conbutton; }
+
+.sheet-intcheck { grid-area: intcheck; }
+.sheet-intmod { grid-area: intmod; }
+.sheet-intbutton { grid-area: intbutton; }
+
+.sheet-wischeck { grid-area: wischeck; }
+.sheet-wismod { grid-area: wismod; }
+.sheet-wisbutton { grid-area: wisbutton; }
+
+.sheet-chacheck { grid-area: chacheck; }
+.sheet-chamod { grid-area: chamod; }
+.sheet-chalabel { grid-area: chalabel; }
+
+.sheet-skilllist {
+  grid-area: skilllist;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  grid-template-rows: 1fr repeat(12, 1fr);
+  grid-template-areas:"skillslabel skillslabel skillslabel"
+                      "acrocheck acromod acrobutton"
+                      "athlcheck athlmod athlbutton"
+                      "anhncheck anhnmod anhnbutton"
+                      "insicheck insimod insibutton"
+                      "inticheck intimod intibutton"
+                      "knowcheck knowmod knowbutton"
+                      "medicheck medimod medibutton"
+                      "natrcheck natrmod natrbutton"
+                      "srchcheck srchmod srchbutton"
+                      "spcfcheck spcfmod spcfbutton"
+                      "stlhcheck stlhmod stlhbutton"
+                      "swimcheck swimmod swimbutton";
+}
+
+.sheet-skillslabel {
+  grid-area: skillslabel;   
+  margin: auto;
+  text-align: center;
+}
+
+.sheet-acrocheck { grid-area: acrocheck; }
+.sheet-acromod { grid-area: acromod; }
+.sheet-acrobutton { grid-area: acrobutton; }
+
+.sheet-athlcheck { grid-area: athlcheck; }
+.sheet-athlmod { grid-area: athlmod; }
+.sheet-athllabel { grid-area: athllabel; }
+
+.sheet-anhncheck { grid-area: anhncheck; }
+.sheet-anhnmod { grid-area: anhnmod; }
+.sheet-anhnbutton { grid-area: anhnbutton; }
+
+.sheet-insicheck { grid-area: insicheck; }
+.sheet-insimod { grid-area: insimod; }
+.sheet-insibutton { grid-area: insibutton; }
+
+.sheet-inticheck { grid-area: inticheck; }
+.sheet-intimod { grid-area: intimod; }
+.sheet-intibutton { grid-area: intibutton; }
+
+.sheet-knowcheck { grid-area: knowcheck; }
+.sheet-knowmod { grid-area: knowmod; }
+.sheet-knowlabel { grid-area: knowlabel; }
+
+.sheet-medicheck { grid-area: medicheck; }
+.sheet-medimod { grid-area: medimod; }
+.sheet-medibutton { grid-area: medibutton; }
+
+.sheet-natrcheck { grid-area: natrcheck; }
+.sheet-natrmod { grid-area: natrmod; }
+.sheet-natrbutton { grid-area: natrbutton; }
+
+.sheet-srchcheck { grid-area: srchcheck; }
+.sheet-srchmod { grid-area: srchmod; }
+.sheet-srchbutton { grid-area: srchbutton; }
+
+.sheet-spcfcheck { grid-area: spcfcheck; }
+.sheet-spcfmod { grid-area: spcfmod; }
+.sheet-spcfbutton { grid-area: spcfbutton; }
+
+.sheet-stlhcheck { grid-area: stlhcheck; }
+.sheet-stlhmod { grid-area: stlhmod; }
+.sheet-stlhbutton { grid-area: stlhbutton; }
+
+.sheet-swimcheck { grid-area: swimcheck; }
+.sheet-swimmod { grid-area: swimmod; }
+.sheet-swimbutton { grid-area: swimbutton; }
+
+
+/*---SHORTCUTS---*/
+.sheet-core {
+  grid-area: core;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 1fr 1fr;
+  grid-template-areas:"vitals"
+                      "shortcuts"
+                      "inventory";
+}
+
+/*---CORE - vitals---*/
+.sheet-vitals {
+  grid-area: vitals;  
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45px 85px 85px 85px;
+  grid-template-areas:"insp insp insp prof prof prof"
+                      "ac ac init init speed speed"
+                      "hpmax hpmax hpcurr hpcurr hptemp hptemp"
+                      "hitdice hitdice hitdice deathsv deathsv deathsv";
+}
+
+.sheet-vital {
+  border: solid 1px;
+  margin: 1px;
+  /* 
+  height: 85px;
+  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  */
+}
+
+.sheet-vital label {
+  margin: none;
+  font-size: 8pt;
+  margin: 1px;
+}
+
+.sheet-vital input {  
+  font-size: 24pt;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+.sheet-vital-narrow {
+  /*
+  height: 45px;
+  border-image-source: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg?sanitize=true");
+  border-image-slice: 15 15;
+  border-image-width: auto;
+  border-image-repeat: round;
+  */
+}
+
+.sheet-insp {
+  grid-area: insp; 
+}
+
+.sheet-prof {  
+  grid-area: prof; 
+}
+
+.sheet-ac {  
+  grid-area: ac; 
+  /*
+  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/AC.svg");
+  */
+}
+
+.sheet-init { grid-area: init; }
+.sheet-speed { grid-area: speed; }
+.sheet-hpmax { grid-area: hpmax; }
+.sheet-hpcurr { grid-area: hpcurr; }
+.sheet-hptemp { grid-area: hptemp; }
+.sheet-hitdice { grid-area: hitdice; }
+
+.sheet-deathsv {  
+  grid-area: deathsv; 
+
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-rows: 25px 25px 30px;
+  grid-template-areas:"success succ1 succ2 succ3"
+                      "failure fail1 fail2 fail3"
+                      "dslabel dslabel dslabel dslabel"
+}
+
+.sheet-deathsv label{
+  width: 100%;
+  vertical-align: bottom;
+  padding: 0px;
+  text-align: center;
+}
+
+.sheet-deathsv span {
+  padding: 3px 0px 0px 3px;
+}
+
+.sheet-deathsv input {
+  margin: auto;
+  padding: 3px 3px 3px 3px;
+}
+
+.sheet-success { 
+  grid-area: success; 
+}
+
+.sheet-failure { 
+  grid-area: failure;
+
+}
+.sheet-succ1 { grid-area: succ1; }
+.sheet-succ2 { grid-area: succ2; }
+.sheet-succ3 { grid-area: succ3; }
+.sheet-fail1 { grid-area: fail1; }
+.sheet-fail2 { grid-area: fail2; }
+.sheet-fail3 { grid-area: fail3; }
+.sheet-dslabel { grid-area: dslabel; }
+
+
+/*---CORE - SHORTCUTS---*/
+.sheet-shortcuts {
+  grid-area: shortcuts;
+  /*background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/4RCRsAd.png");*/
+  background-repeat: no-repeat;
+  min-height: 150px;
+}
+
+/*---CORE - INVENTORY---*/
+.sheet-inventory {
+  grid-area: inventory;
+  min-height: 150px;
+}
+
+/*---BIO---*/
+.sheet-bio {
+  grid-area: bio;
+}
+
+.sheet-bio input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+/*---FOOTER---*/
+.sheet-footer {
+  grid-area: footer;
+}
+
+
+/*---General CSS---*/
+.sheet-section {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.sheet-section label{
+  font-size: 8pt;
+}
+
+.sheet-inner-section label{
+  font-size: 8pt;
+  vertical-align: bottom;
+  padding: 0px;
+  text-align: center;
+}
+
+.sheet-wordbutton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
