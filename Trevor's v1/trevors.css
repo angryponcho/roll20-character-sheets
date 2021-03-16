@@ -1,4 +1,7 @@
-.sheet-main {
+.main {
+  font-family: Arial;
+  background: url("https://i.imgur.com/WtJzLgg.jpg");
+
   display: grid;
   min-width: 800px;
   grid-gap: 3px;
@@ -13,13 +16,13 @@
 ***** ***** ***** ***** ***** ***** ***** HEADER ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-header {
+.header {
   grid-area: header;
   background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/CharScroll.svg");
   background-repeat: no-repeat;
 }
 
-.sheet-charbox {
+.charbox {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
@@ -36,7 +39,7 @@
                       "playername alignment charbg";
 }
 
-.sheet-charbox input {
+.charbox input {
   display: block;
   text-align: center;
   margin-left: auto;
@@ -48,7 +51,7 @@
   padding-bottom: 0px;
 }
 
-.sheet-charbox span {
+.charbox span {
   display: block;
   text-align: center;
   width: 100%;
@@ -57,18 +60,18 @@
   padding: 0px 0px 0px 0px;
 }
 
-.sheet-pronouns { grid-area: pronouns; }
-.sheet-race { grid-area: race; }
-.sheet-level { grid-area: level; }
-.sheet-playername { grid-area: playername; }
-.sheet-alignment { grid-area: alignment; }
-.sheet-charbg { grid-area: charbg; }
+.pronouns { grid-area: pronouns; }
+.race { grid-area: race; }
+.level { grid-area: level; }
+.playername { grid-area: playername; }
+.alignment { grid-area: alignment; }
+.charbg { grid-area: charbg; }
 
-.sheet-header label {
+.header label {
   padding: 55px 0px 0px 55px;
 }
 
-.sheet-header input {
+.header input {
   background: transparent;
   border: none;
 }
@@ -78,7 +81,7 @@
 ***** ***** ***** ***** ***** ***** ***** SIDBAR ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-sidebar {
+.sidebar {
   grid-area: sidebar;
 
   display: grid;
@@ -90,7 +93,7 @@
 }
 
 /*---SIDEBAR - SCORES---*/
-.sheet-scores {
+.scores {
   grid-area: scores;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-back.svg");
   background-repeat: no-repeat;
@@ -111,17 +114,17 @@
                       "cha";
 }
 
-.sheet-score {
+.score {
   font-size: 14pt;
   padding: 0px;
   margin-top: 5px;
 }
 
-.sheet-score-mod {
+.score-mod {
   font-size: 26pt;
 }
 
-.sheet-str {
+.str {
   grid-area: str;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-STR.svg");
   background-repeat: no-repeat;
@@ -135,11 +138,11 @@
                       "strscore"
 }
 
-.sheet-strlabel { grid-area: strlabel; }
-.sheet-strmod { grid-area: strmod; }
-.sheet-strscore { grid-area: strscore; }
+.strlabel { grid-area: strlabel; }
+.strmod { grid-area: strmod; }
+.strscore { grid-area: strscore; }
 
-.sheet-dex {
+.dex {
   grid-area: dex;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-DEX.svg");
   background-repeat: no-repeat;
@@ -153,11 +156,11 @@
                       "dexscore"
 }
 
-.sheet-dexlabel { grid-area: dexlabel; }
-.sheet-dexmod { grid-area: dexmod; }
-.sheet-dexscore { grid-area: dexscore; }
+.dexlabel { grid-area: dexlabel; }
+.dexmod { grid-area: dexmod; }
+.dexscore { grid-area: dexscore; }
 
-.sheet-con {
+.con {
   grid-area: con;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-CNS.svg");
   background-repeat: no-repeat;
@@ -171,11 +174,11 @@
                       "conscore"
 }
 
-.sheet-conlabel { grid-area: conlabel; }
-.sheet-conmod { grid-area: conmod; }
-.sheet-conscore { grid-area: conscore; }
+.conlabel { grid-area: conlabel; }
+.conmod { grid-area: conmod; }
+.conscore { grid-area: conscore; }
 
-.sheet-int {
+.int {
   grid-area: int;  
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-INT.svg");
   background-repeat: no-repeat;
@@ -189,11 +192,11 @@
                       "intscore"
 }
 
-.sheet-intlabel { grid-area: intlabel; }
-.sheet-intmod { grid-area: intmod; }
-.sheet-intscore { grid-area: intscore; }
+.intlabel { grid-area: intlabel; }
+.intmod { grid-area: intmod; }
+.intscore { grid-area: intscore; }
 
-.sheet-wis {
+.wis {
   grid-area: wis;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-WIS.svg");
   background-repeat: no-repeat;
@@ -207,11 +210,11 @@
                       "wisscore"
 }
 
-.sheet-wislabel { grid-area: wislabel; }
-.sheet-wismod { grid-area: wismod; }
-.sheet-wisscore { grid-area: wisscore; }
+.wislabel { grid-area: wislabel; }
+.wismod { grid-area: wismod; }
+.wisscore { grid-area: wisscore; }
 
-.sheet-cha {
+.cha {
   grid-area: cha;
   background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/ability-CHA.svg");
   background-repeat: no-repeat;
@@ -225,19 +228,19 @@
                       "chascore"
 }
 
-.sheet-chalabel { grid-area: chalabel; }
-.sheet-chamod { grid-area: chamod; }
-.sheet-chascore { grid-area: chascore; }
+.chalabel { grid-area: chalabel; }
+.chamod { grid-area: chamod; }
+.chascore { grid-area: chascore; }
 
 
-.sheet-ability-score label {
+.ability-score label {
   padding-top: 5px;
   font-size: 16pt;
   width: 100%;
   text-align: center;
 }
 
-.sheet-ability-score input {
+.ability-score input {
   background: transparent;
   border: none;
   width: 90px;
@@ -249,18 +252,19 @@
 ***** ***** ***** ***** ***** ***** ***** SAVES SKILLS TOOLS***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-skills {
+.skills {
   grid-area: skills;
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-row-gap: 3px;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas:"saves"
-                      "skilllist"
-                      "tools";
+  grid-template-areas:"saves inspprof"
+                      "skilllist skilllist"
+                      "tools tools";
 }
 
-.sheet-skills select {
+.skills select {
   height: 20px;
   width: 40px; 
   font-size: 12px;
@@ -274,8 +278,32 @@
   -webkit-appearance: none; 
 }
 
-.sheet-saves {
+.skills input {
+  margin-left: 5px;
+}
+
+.skills select {
+  margin-right: 5px;
+}
+
+.inspprof {
+  grid-area: inspprof;
+
+  display: grid;
+  grid-row-gap: 1px;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:"insp"
+                      "prof";
+}
+
+.insp { grid-area: insp; }
+.prof { grid-area: prof; }
+
+.saves {
   grid-area: saves;
+  padding-bottom: 5px;
+  text-align: center;
 
   display: grid;
   grid-template-columns: 1fr 1fr 4fr;
@@ -289,41 +317,43 @@
                       "chaprof chasavemod chalabel";
 }
 
-.sheet-savelabel {
+.savelabel {
   grid-area: savelabel;   
   margin: auto;
   text-align: center;
 }
 
-.sheet-strprof { grid-area: strprof; }
-.sheet-strsavemod { grid-area: strsavemod; }
-.sheet-strbutton { grid-area: strbutton; }
+.strprof { grid-area: strprof; }
+.strsavemod { grid-area: strsavemod; }
+.strbutton { grid-area: strbutton; }
 
-.sheet-dexprof { grid-area: dexprof; }
-.sheet-dexsavemod { grid-area: dexsavemod; }
-.sheet-dexlabel { grid-area: dexlabel; }
+.dexprof { grid-area: dexprof; }
+.dexsavemod { grid-area: dexsavemod; }
+.dexlabel { grid-area: dexlabel; }
 
-.sheet-conprof { grid-area: conprof; }
-.sheet-consavemod { grid-area: consavemod; }
-.sheet-conbutton { grid-area: conbutton; }
+.conprof { grid-area: conprof; }
+.consavemod { grid-area: consavemod; }
+.conbutton { grid-area: conbutton; }
 
-.sheet-intprof { grid-area: intprof; }
-.sheet-intsavemod { grid-area: intsavemod; }
-.sheet-intbutton { grid-area: intbutton; }
+.intprof { grid-area: intprof; }
+.intsavemod { grid-area: intsavemod; }
+.intbutton { grid-area: intbutton; }
 
-.sheet-wisprof { grid-area: wisprof; }
-.sheet-wissavemod { grid-area: wissavemod; }
-.sheet-wisbutton { grid-area: wisbutton; }
+.wisprof { grid-area: wisprof; }
+.wissavemod { grid-area: wissavemod; }
+.wisbutton { grid-area: wisbutton; }
 
-.sheet-chaprof { grid-area: chaprof; }
-.sheet-chasavemod { grid-area: chasavemod; }
-.sheet-chalabel { grid-area: chalabel; }
+.chaprof { grid-area: chaprof; }
+.chasavemod { grid-area: chasavemod; }
+.chalabel { grid-area: chalabel; }
 
-.sheet-skilllist {
+.skilllist {
   grid-area: skilllist;
+  padding-bottom: 5px;
+  text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr 1fr;
+  grid-template-columns: 1fr 1fr 6fr 2fr;
   grid-template-rows: repeat(13, 20px);
   grid-template-areas:"skillslabel skillslabel skillslabel skillslabel"
                       "acroprof acromod acrobutton acroability"
@@ -340,176 +370,195 @@
                       "swimprof swimmod swimbutton swimability";
 }
 
-.sheet-skillslabel {
+.skillslabel {
   grid-area: skillslabel;   
   margin: auto;
   text-align: center;
 }
 
-.sheet-acroprof { grid-area: acroprof; }
-.sheet-acromod { grid-area: acromod; }
-.sheet-acrobutton { grid-area: acrobutton; }
-.sheet-acroability { grid-area: acroability; }
+.acroprof { grid-area: acroprof; }
+.acromod { grid-area: acromod; }
+.acrobutton { grid-area: acrobutton; }
+.acroability { grid-area: acroability; }
 
-.sheet-athlprof { grid-area: athlprof; }
-.sheet-athlmod { grid-area: athlmod; }
-.sheet-athllabel { grid-area: athllabel; }
-.sheet-athlability { grid-area: athlability; }
+.athlprof { grid-area: athlprof; }
+.athlmod { grid-area: athlmod; }
+.athllabel { grid-area: athllabel; }
+.athlability { grid-area: athlability; }
 
-.sheet-anhnprof { grid-area: anhnprof; }
-.sheet-anhnmod { grid-area: anhnmod; }
-.sheet-anhnbutton { grid-area: anhnbutton; }
-.sheet-anhnability { grid-area: anhnability; }
+.anhnprof { grid-area: anhnprof; }
+.anhnmod { grid-area: anhnmod; }
+.anhnbutton { grid-area: anhnbutton; }
+.anhnability { grid-area: anhnability; }
 
-.sheet-insiprof { grid-area: insiprof; }
-.sheet-insimod { grid-area: insimod; }
-.sheet-insibutton { grid-area: insibutton; }
-.sheet-insiability { grid-area: insiability; }
+.insiprof { grid-area: insiprof; }
+.insimod { grid-area: insimod; }
+.insibutton { grid-area: insibutton; }
+.insiability { grid-area: insiability; }
 
-.sheet-intiprof { grid-area: intiprof; }
-.sheet-intimod { grid-area: intimod; }
-.sheet-intibutton { grid-area: intibutton; }
-.sheet-intiability { grid-area: intiability; }
+.intiprof { grid-area: intiprof; }
+.intimod { grid-area: intimod; }
+.intibutton { grid-area: intibutton; }
+.intiability { grid-area: intiability; }
 
-.sheet-knowprof { grid-area: knowprof; }
-.sheet-knowmod { grid-area: knowmod; }
-.sheet-knowlabel { grid-area: knowlabel; }
-.sheet-knowability { grid-area: knowability; }
+.knowprof { grid-area: knowprof; }
+.knowmod { grid-area: knowmod; }
+.knowlabel { grid-area: knowlabel; }
+.knowability { grid-area: knowability; }
 
-.sheet-mediprof { grid-area: mediprof; }
-.sheet-medimod { grid-area: medimod; }
-.sheet-medibutton { grid-area: medibutton; }
-.sheet-acroability { grid-area: acroability; }
+.mediprof { grid-area: mediprof; }
+.medimod { grid-area: medimod; }
+.medibutton { grid-area: medibutton; }
+.acroability { grid-area: acroability; }
 
-.sheet-natrprof { grid-area: natrprof; }
-.sheet-natrmod { grid-area: natrmod; }
-.sheet-natrbutton { grid-area: natrbutton; }
-.sheet-natrability { grid-area: natrability; }
+.natrprof { grid-area: natrprof; }
+.natrmod { grid-area: natrmod; }
+.natrbutton { grid-area: natrbutton; }
+.natrability { grid-area: natrability; }
 
-.sheet-srchprof { grid-area: srchprof; }
-.sheet-srchmod { grid-area: srchmod; }
-.sheet-srchbutton { grid-area: srchbutton; }
-.sheet-srchability { grid-area: srchability; }
+.srchprof { grid-area: srchprof; }
+.srchmod { grid-area: srchmod; }
+.srchbutton { grid-area: srchbutton; }
+.srchability { grid-area: srchability; }
 
-.sheet-spcfprof { grid-area: spcfprof; }
-.sheet-spcfmod { grid-area: spcfmod; }
-.sheet-spcfbutton { grid-area: spcfbutton; }
-.sheet-spcfhability { grid-area: spcfability; }
+.spcfprof { grid-area: spcfprof; }
+.spcfmod { grid-area: spcfmod; }
+.spcfbutton { grid-area: spcfbutton; }
+.spcfhability { grid-area: spcfability; }
 
-.sheet-stlhprof { grid-area: stlhprof; }
-.sheet-stlhmod { grid-area: stlhmod; }
-.sheet-stlhbutton { grid-area: stlhbutton; }
-.sheet-stlhability { grid-area: stlhability; }
+.stlhprof { grid-area: stlhprof; }
+.stlhmod { grid-area: stlhmod; }
+.stlhbutton { grid-area: stlhbutton; }
+.stlhability { grid-area: stlhability; }
 
-.sheet-swimprof { grid-area: swimprof; }
-.sheet-swimmod { grid-area: swimmod; }
-.sheet-swimbutton { grid-area: swimbutton; }
-.sheet-swimability { grid-area: swimability; }
+.swimprof { grid-area: swimprof; }
+.swimmod { grid-area: swimmod; }
+.swimbutton { grid-area: swimbutton; }
+.swimability { grid-area: swimability; }
 
-.sheet-tools {
+.tools {
   grid-area: tools;
+  padding-bottom: 5px;
+  text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr;
+  grid-template-columns: 1fr 1fr 6fr 2fr;
   grid-template-rows: repeat(19, 20px);
-  grid-template-areas:"toolslabel toolslabel toolslabel"
-                      "alchemistsprof alchemistsmod alchemistsbutton"
-                      "brewersprof brewersmod brewersbutton"
-                      "calligraphersprof calligraphersmod calligraphersbutton"
-                      "carpentersprof carpentersmod carpentersbutton"
-                      "cartographersprof cartographersmod cartographersbutton"
-                      "cobblersprof cobblersmod cobblersbutton"
-                      "cooksprof cooksmod cooksbutton"
-                      "glassblowersprof glassblowersmod glassblowersbutton"
-                      "jewelersprof jewelersmod jewelersbutton"
-                      "leatherworkersprof leatherworkersmod leatherworkersbutton"
-                      "masonsprof masonsmod masonsbutton"
-                      "musicprof musicmod musicbutton"
-                      "paintersprof paintersmod paintersbutton"
-                      "pottersprof pottersmod pottersbutton"
-                      "smithsprof smithsmod smithsbutton"
-                      "tinkersprof tinkersmod tinkersbutton"
-                      "weaversprof weaversmod weaversbutton"
-                      "woodcarversprof woodcarversmod woodcarversbutton";
+  grid-template-areas:"toolslabel toolslabel toolslabel toolslabel"
+                      "alchprof alchmod alchbutton alchability"
+                      "brewprof brewmod brewbutton brewability"
+                      "cligprof cligmod cligbutton cligability"
+                      "cpntprof cpntmod cpntbutton cpntability"
+                      "crtgprof crtgmod crtgbutton crtgability"
+                      "cobbprof cobbmod cobbbutton cobbability"
+                      "cookprof cookmod cookbutton cookability"
+                      "glbwprof glbwmod glbwbutton glbwability"
+                      "jwlrprof jwlrmod jwlrbutton jwlrability"
+                      "lthrprof lthrmod lthrbutton lthrability"
+                      "masnprof masnmod masnbutton masnability"
+                      "muscprof muscmod muscbutton muscability"
+                      "pntrprof pntrmod pntrbutton pntrability"
+                      "pttrprof pttrmod pttrbutton pttrability"
+                      "smthprof smthmod smthbutton smthability"
+                      "tnkrprof tnkrmod tnkrbutton tnkrability"
+                      "wevrprof wevrmod wevrbutton wevrability"
+                      "wcrvprof wcrvmod wcrvbutton wrcvability";
 }
 
-.sheet-toolslabel {
+.toolslabel {
   grid-area: toolslabel;   
   margin: auto;
-  text-align: center;
 }
 
-.sheet-alchemistsprof { grid-area: alchemistsprof; }
-.sheet-alchemistsmod { grid-area: alchemistsmod; }
-.sheet-alchemistsbutton { grid-area: alchemistsbutton; }
+.alchprof { grid-area: alchprof; }
+.alchmod { grid-area: alchmod; }
+.alchbutton { grid-area: alchbutton; }
+.alchability { grid-area: alchability; }
 
-.sheet-brewersprof { grid-area: brewersprof; }
-.sheet-brewersmod { grid-area: brewersmod; }
-.sheet-brewersbutton { grid-area: brewersbutton; }
+.brewprof { grid-area: brewprof; }
+.brewmod { grid-area: brewmod; }
+.brewbutton { grid-area: brewbutton; }
+.brewability { grid-area: brewability; }
 
-.sheet-calligraphersprof { grid-area: calligraphersprof; }
-.sheet-calligraphersmod { grid-area: calligraphersmod; }
-.sheet-calligraphersbutton { grid-area: calligraphersbutton; }
+.cligprof { grid-area: cligprof; }
+.cligmod { grid-area: cligmod; }
+.cligbutton { grid-area: cligbutton; }
+.cligability { grid-area: cligability; }
 
-.sheet-carpentersprof { grid-area: carpentersprof; }
-.sheet-carpentersmod { grid-area: carpentersmod; }
-.sheet-carpentersbutton { grid-area: carpentersbutton; }
+.cpntprof { grid-area: cpntprof; }
+.cpntmod { grid-area: cpntmod; }
+.cpntbutton { grid-area: cpntbutton; }
+.cpntability { grid-area: cpntability; }
 
-.sheet-cartographersprof { grid-area: cartographersprof; }
-.sheet-cartographersmod { grid-area: cartographersmod; }
-.sheet-cartographersbutton { grid-area: cartographersbutton; }
+.crtgprof { grid-area: crtgprof; }
+.crtgmod { grid-area: crtgmod; }
+.crtgbutton { grid-area: crtgbutton; }
+.crtgability { grid-area: crtgability; }
 
-.sheet-cobblersprof { grid-area: cobblersprof; }
-.sheet-cobblersmod { grid-area: cobblersmod; }
-.sheet-cobblersbutton { grid-area: cobblersbutton; }
+.cobbprof { grid-area: cobbprof; }
+.cobbmod { grid-area: cobbmod; }
+.cobbbutton { grid-area: cobbbutton; }
+.cobbability { grid-area: cobbability; }
 
-.sheet-cooksprof { grid-area: cooksprof; }
-.sheet-cooksmod { grid-area: cooksmod; }
-.sheet-cooksbutton { grid-area: cooksbutton; }
+.cookprof { grid-area: cookprof; }
+.cookmod { grid-area: cookmod; }
+.cookbutton { grid-area: cookbutton; }
+.cookability { grid-area: cookability; }
 
-.sheet-glassblowersprof { grid-area: glassblowersprof; }
-.sheet-glassblowersmod { grid-area: glassblowersmod; }
-.sheet-glassblowersbutton { grid-area: glassblowersbutton; }
+.glbwprof { grid-area: glbwprof; }
+.glbwmod { grid-area: glbwmod; }
+.glbwbutton { grid-area: glbwbutton; }
+.glbwability { grid-area: glbwability; }
 
-.sheet-jewelersprof { grid-area: jewelersprof; }
-.sheet-jewelersmod { grid-area: jewelersmod; }
-.sheet-jewelersbutton { grid-area: jewelersbutton; }
+.jwlrprof { grid-area: jwlrprof; }
+.jwlrmod { grid-area: jwlrmod; }
+.jwlrbutton { grid-area: jwlrbutton; }
+.jwlrability { grid-area: jwlrability; }
 
-.sheet-leatherworkersprof { grid-area: leatherworkersprof; }
-.sheet-leatherworkersmod { grid-area: leatherworkersmod; }
-.sheet-leatherworkersbutton { grid-area: leatherworkersbutton; }
+.lthrprof { grid-area: lthrprof; }
+.lthrmod { grid-area: lthrmod; }
+.lthrbutton { grid-area: lthrbutton; }
+.lthrability { grid-area: lthrability; }
 
-.sheet-masonsprof { grid-area: masonsprof; }
-.sheet-masonsmod { grid-area: masonsmod; }
-.sheet-masonsbutton { grid-area: masonsbutton; }
+.masnprof { grid-area: masnprof; }
+.masnmod { grid-area: masnmod; }
+.masnbutton { grid-area: masnbutton; }
+.masnability { grid-area: masnability; }
 
-.sheet-musicprof { grid-area: musicprof; }
-.sheet-musicmod { grid-area: musicmod; }
-.sheet-musicbutton { grid-area: musicbutton; }
+.muscprof { grid-area: muscprof; }
+.muscmod { grid-area: muscmod; }
+.muscbutton { grid-area: muscbutton; }
+.muscability { grid-area: muscability; }
 
-.sheet-paintersprof { grid-area: paintersprof; }
-.sheet-paintersmod { grid-area: paintersmod; }
-.sheet-paintersbutton { grid-area: paintersbutton; }
+.pntrprof { grid-area: pntrprof; }
+.pntrmod { grid-area: pntrmod; }
+.pntrbutton { grid-area: pntrbutton; }
+.pntrability { grid-area: pntrability; }
 
-.sheet-pottersprof { grid-area: pottersprof; }
-.sheet-pottersmod { grid-area: pottersmod; }
-.sheet-pottersbutton { grid-area: pottersbutton; }
+.pttrprof { grid-area: pttrprof; }
+.pttrmod { grid-area: pttrmod; }
+.pttrbutton { grid-area: pttrbutton; }
+.pttrability { grid-area: pttrability; }
 
-.sheet-smithsprof { grid-area: smithsprof; }
-.sheet-smithsmod { grid-area: smithsmod; }
-.sheet-smithsbutton { grid-area: smithsbutton; }
+.smthprof { grid-area: smthprof; }
+.smthmod { grid-area: smthmod; }
+.smthbutton { grid-area: smthbutton; }
+.smthability { grid-area: smthability; }
 
-.sheet-tinkersprof { grid-area: tinkersprof; }
-.sheet-tinkersmod { grid-area: tinkersmod; }
-.sheet-tinkersbutton { grid-area: tinkersbutton; }
+.tnkrprof { grid-area: tnkrprof; }
+.tnkrmod { grid-area: tnkrmod; }
+.tnkrbutton { grid-area: tnkrbutton; }
+.tnkrability { grid-area: tnkrability; }
 
-.sheet-weaversprof { grid-area: weaversprof; }
-.sheet-weaversmod { grid-area: weaversmod; }
-.sheet-weaversbutton { grid-area: weaversbutton; }
+.wevrprof { grid-area: wevrprof; }
+.wevrmod { grid-area: wevrmod; }
+.wevrbutton { grid-area: wevrbutton; }
+.wevrability { grid-area: wevrability; }
 
-.sheet-woodcarversprof { grid-area: woodcarversprof; }
-.sheet-woodcarversmod { grid-area: woodcarversmod; }
-.sheet-woodcarversbutton { grid-area: woodcarversbutton; }
+.wcrvprof { grid-area: wcrvprof; }
+.wcrvmod { grid-area: wcrvmod; }
+.wcrvbutton { grid-area: wcrvbutton; }
+.wrcvability { grid-area: wrcvability; }
 
 
 /***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
@@ -517,7 +566,7 @@
 ***** ***** ***** ***** ***** ***** ***** SHORTCUTS & INV  ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-core {
+.core {
   grid-area: core;
 
   display: grid;
@@ -528,77 +577,73 @@
                       "inventory";
 }
 
+
 /*---CORE - vitals---*/
-.sheet-vitals {
+.vitals {
   grid-area: vitals;  
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 45px 85px 85px 85px;
-  grid-template-areas:"insp insp insp prof prof prof"
-                      "ac ac init init speed speed"
-                      "hpmax hpmax hpcurr hpcurr hptemp hptemp"
-                      "hitdice hitdice hitdice deathsv deathsv deathsv";
+  grid-template-columns: 1fr;
+  grid-template-rows: 85px 85px 85px;
+  grid-template-areas:"vitals-one"
+                      "vitals-two"
+                      "vitals-three";
 }
 
-.sheet-vital {
-  border: solid 1px;
-  margin: 1px;
-  /* 
-  height: 85px;
-  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: contain;
-  */
-}
-
-.sheet-vital label {
-  margin: none;
+.vital label {
+  margin: 0;
   font-size: 8pt;
   margin: 1px;
 }
 
-.sheet-vital input {  
+.vital input {  
   font-size: 24pt;
   background: transparent;
   border: none;
   width: 100%;
 }
 
-.sheet-vital-narrow {
-  /*
-  height: 45px;
-  border-image-source: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg?sanitize=true");
-  border-image-slice: 15 15;
-  border-image-width: auto;
-  border-image-repeat: round;
-  */
+.vitals-one {
+  grid-area: vitals-one;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"ac init speed";
 }
 
-.sheet-insp {
-  grid-area: insp; 
+.ac { grid-area: ac; }
+.init { grid-area: init; }
+.speed { grid-area: speed; }
+
+
+.vitals-two {
+  grid-area: vitals-two;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"hpmax hpcurr hptemp";
 }
 
-.sheet-prof {  
-  grid-area: prof; 
+.hpmax { grid-area: hpmax; }
+.hpcurr { grid-area: hpcurr; }
+.hptemp { grid-area: hptemp; }
+
+
+.vitals-three {
+  grid-area: vitals-three;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"hitdice deathsv";
 }
 
-.sheet-ac {  
-  grid-area: ac; 
-  /*
-  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/AC.svg");
-  */
-}
 
-.sheet-init { grid-area: init; }
-.sheet-speed { grid-area: speed; }
-.sheet-hpmax { grid-area: hpmax; }
-.sheet-hpcurr { grid-area: hpcurr; }
-.sheet-hptemp { grid-area: hptemp; }
-.sheet-hitdice { grid-area: hitdice; }
+.hitdice { grid-area: hitdice; }
 
-.sheet-deathsv {  
+.deathsv {  
   grid-area: deathsv; 
 
   display: grid;
@@ -610,41 +655,41 @@
                       "dslabel dslabel dslabel dslabel"
 }
 
-.sheet-deathsv label{
+.deathsv label{
   width: 100%;
   vertical-align: bottom;
   padding: 0px;
   text-align: center;
 }
 
-.sheet-deathsv span {
+.deathsv span {
   padding: 3px 0px 0px 3px;
 }
 
-.sheet-deathsv input {
+.deathsv input {
   margin: auto;
   padding: 3px 3px 3px 3px;
 }
 
-.sheet-success { 
+.success { 
   grid-area: success; 
 }
 
-.sheet-failure { 
+.failure { 
   grid-area: failure;
 
 }
-.sheet-succ1 { grid-area: succ1; }
-.sheet-succ2 { grid-area: succ2; }
-.sheet-succ3 { grid-area: succ3; }
-.sheet-fail1 { grid-area: fail1; }
-.sheet-fail2 { grid-area: fail2; }
-.sheet-fail3 { grid-area: fail3; }
-.sheet-dslabel { grid-area: dslabel; }
+.succ1 { grid-area: succ1; }
+.succ2 { grid-area: succ2; }
+.succ3 { grid-area: succ3; }
+.fail1 { grid-area: fail1; }
+.fail2 { grid-area: fail2; }
+.fail3 { grid-area: fail3; }
+.dslabel { grid-area: dslabel; }
 
 
 /*---CORE - SHORTCUTS---*/
-.sheet-shortcuts {
+.shortcuts {
   grid-area: shortcuts;
   /*background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/4RCRsAd.png");*/
   background-repeat: no-repeat;
@@ -652,7 +697,7 @@
 }
 
 /*---CORE - INVENTORY---*/
-.sheet-inventory {
+.inventory {
   grid-area: inventory;
   min-height: 150px;
 }
@@ -662,7 +707,7 @@
 ***** ***** ***** ***** ***** ***** ***** BIOGRAPHY ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-bio {
+.bio {
   grid-area: bio;
 
   display: grid;
@@ -675,16 +720,16 @@
                       "languages";
 }
 
-.sheet-bio input {
+.bio input {
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
 }
 
-.sheet-levels { grid-area: levels; }
+.levels { grid-area: levels; }
 
-.sheet-appearance { 
+.appearance { 
   grid-area: appearance; 
 
   display: grid;
@@ -697,7 +742,7 @@
                       "skin marks";
 }
 
-.sheet-appearance input {
+.appearance input {
   display: block;
   text-align: center;
   margin-left: auto;
@@ -709,7 +754,7 @@
   padding-bottom: 0px;
 }
 
-.sheet-appearance span {
+.appearance span {
   display: block;
   text-align: center;
   margin-bottom: 0px;
@@ -718,27 +763,26 @@
   padding: 0px 0px 0px 0px;
 }
 
-.sheet-appearance label {
+.appearance label {
   font-size: 8pt;
   vertical-align: top;
   padding: 0px;
   text-align: center;
 }
 
-.sheet-appearancelabel { grid-area: appearancelabel; }
-.sheet-age { grid-area: age; }
-.sheet-size { grid-area: size; }
-.sheet-charheight { grid-area: charheight; }
-.sheet-charweight { grid-area: charweight; }
-.sheet-eyes { grid-area: eyes; }
-.sheet-hair { grid-area: hair; }
-.sheet-skin { grid-area: skin; }
-.sheet-marks { grid-area: marks; }
+.appearancelabel { grid-area: appearancelabel; }
+.age { grid-area: age; }
+.size { grid-area: size; }
+.charheight { grid-area: charheight; }
+.charweight { grid-area: charweight; }
+.eyes { grid-area: eyes; }
+.hair { grid-area: hair; }
+.skin { grid-area: skin; }
+.marks { grid-area: marks; }
 
 
-.sheet-personality {
+.personality {
   grid-area: personality; 
-  background-color: #F0F0F0;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -749,38 +793,55 @@
                       "flaw"
 }
 
-.sheet-personality textarea {
-  border: 1px solid black;
+.personality textarea {
+  border: none;
   margin: 0px 5px 0px 5px;
   width: 210px;
   height: 60px;
   resize: none;
+  padding: 0;
 }
 
-.sheet-personality span {
+.personality span {
   display: block;
   text-align: center;
   margin-bottom: 0px;
-  text-align: center;
   font-size: 8pt;
+  font-weight: bold;
   padding: 0px 0px 0px 0px;
+  margin-top: 5px;
 }
 
-.sheet-personality label {
-  font-size: 8pt;
-  vertical-align: top;
-  padding: 0px;
-  text-align: center;
+.trait { 
+  grid-area: trait;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/4RCRsAd.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.sheet-personalitylabel { grid-area: personalitylabel; }
-.sheet-trait { grid-area: trait; }
-.sheet-ideal { grid-area: ideal; }
-.sheet-bond { grid-area: bond; }
-.sheet-flaw { grid-area: flaw; }
+.ideal { 
+  grid-area: ideal; 
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/4988JS0.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bond { 
+  grid-area: bond; 
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/4988JS0.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.flaw { 
+  grid-area: flaw;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/gw9HTsq.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
 
-.sheet-languages { grid-area: languages; }
+.languages { grid-area: languages; }
 
 
 /***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
@@ -788,16 +849,19 @@
 ***** ***** ***** ***** ***** ***** ***** GENERAL ***** *****  ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
-.sheet-section {
+.section {
   border-style: solid;
   border-width: 1px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
 }
 
-.sheet-section label{
+.section label{
   font-size: 8pt;
+  text-align: center;
 }
 
-.sheet-wordbutton {
+.wordbutton {
   background: none;
   border: none;
   margin: 0;

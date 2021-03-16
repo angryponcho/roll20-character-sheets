@@ -52,9 +52,9 @@
       </div>
     </div>
 
-    <div class="skills section">
+    <div class="skills">
       <div class="saves section">
-        <label class="savelabel">Saving Throws</label>
+        <label class="savelabel">SAVING THROWS</label>
 
         <input type="checkbox" class="strprof"/>
         <span class="strsavemod">0</span>
@@ -81,8 +81,19 @@
         <button class="chabutton wordbutton">Charisma</button>
       </div>
 
+      <div class="inspprof">
+        <div class="insp">
+          <input type="checkbox" class="inspprof" name="attr_insp">
+          <label>INSP</label>
+        </div>
+        <div class="prof vital vital-narrow">
+          <span name="attr_prof">+5</span>
+          <label>PROF</label>
+        </div>
+      </div>
+
       <div class="skilllist section">
-        <label class="skillslabel">Skills</label>
+        <label class="skillslabel">SKILLS</label>
 
         <input type="checkbox" class="acroprof"/>
         <span class="acromod">0</span>
@@ -230,139 +241,288 @@
       </div>
 
       <div class="tools section">
-        <label class="toolslabel">Tools</label>
+        <label class="toolslabel">TOOLS</label>
 
-        <input type="checkbox" class="alchemistsprof"/>
-        <span class="alchemistsmod">0</span>
-        <button class="alchemistsbutton wordbutton">Alchemist's Supplies</button>
+        <input type="checkbox" class="alchprof"/>
+        <span class="alchmod">0</span>
+        <button class="alchbutton wordbutton">Alchemist's Supplies</button>
+        <select class="alchability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="brewersprof"/>
-        <span class="brewersmod">0</span>
-        <button class="brewersbutton wordbutton">Brewers's Supplies</button>
+        <input type="checkbox" class="brewprof"/>
+        <span class="brewmod">0</span>
+        <button class="brewbutton wordbutton">Brewers's Supplies</button>
+        <select class="brewability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="calligraphersprof"/>
-        <span class="calligraphersmod">0</span>
-        <button class="calligraphersbutton wordbutton">Calligrapher's Supplies</button>
+        <input type="checkbox" class="cligprof"/>
+        <span class="cligmod">0</span>
+        <button class="cligbutton wordbutton">Calligrapher's Supplies</button>
+        <select class="cligability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="carpentersprof"/>
-        <span class="carpentersmod">0</span>
-        <button class="carpentersbutton wordbutton">Carpenter's Tools</button>
+        <input type="checkbox" class="cpntprof"/>
+        <span class="cpntmod">0</span>
+        <button class="cpntbutton wordbutton">Carpenter's Tools</button>
+        <select class="cpntability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="cartographersprof"/>
-        <span class="cartographersmod">0</span>
-        <button class="cartographersbutton wordbutton">Cartographer's Tools</button>
+        <input type="checkbox" class="crtgprof"/>
+        <span class="crtgmod">0</span>
+        <button class="crtgbutton wordbutton">Cartographer's Tools</button>
+        <select class="crtgability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="cobblersprof"/>
-        <span class="cobblersmod">0</span>
-        <button class="cobblersbutton wordbutton">Cobbler's Tools</button>
+        <input type="checkbox" class="cobbprof"/>
+        <span class="cobbmod">0</span>
+        <button class="cobbbutton wordbutton">Cobbler's Tools</button>
+        <select class="cobbability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="cooksprof"/>
-        <span class="cooksmod">0</span>
-        <button class="cooksbutton wordbutton">Cook's Utensils</button>
+        <input type="checkbox" class="cookprof"/>
+        <span class="cookmod">0</span>
+        <button class="cookbutton wordbutton">Cook's Utensils</button>
+        <select class="cookability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="glassblowersprof"/>
-        <span class="glassblowersmod">0</span>
-        <button class="glassblowersbutton wordbutton">Glassblower's Tools</button>
+        <input type="checkbox" class="glbwprof"/>
+        <span class="glbwmod">0</span>
+        <button class="glbwbutton wordbutton">Glassblower's Tools</button>
+        <select class="glbwability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="jewelersprof"/>
-        <span class="jewelersmod">0</span>
-        <button class="jewelersbutton wordbutton">Jeweler's Tools</button>
+        <input type="checkbox" class="jwlrprof"/>
+        <span class="jwlrmod">0</span>
+        <button class="jwlrbutton wordbutton">Jeweler's Tools</button>
+        <select class="jwlrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="leatherworkersprof"/>
-        <span class="leatherworkersmod">0</span>
-        <button class="leatherworkersbutton wordbutton">Leatherworker's Tools</button>
+        <input type="checkbox" class="lthrprof"/>
+        <span class="lthrmod">0</span>
+        <button class="lthrbutton wordbutton">Leatherworker's Tools</button>
+        <select class="lthrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="masonsprof"/>
-        <span class="masonsmod">0</span>
-        <button class="masonsbutton wordbutton">Mason's Tools</button>
+        <input type="checkbox" class="masnprof"/>
+        <span class="masnmod">0</span>
+        <button class="masnbutton wordbutton">Mason's Tools</button>
+        <select class="masnability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="musicprof"/>
-        <span class="musicmod">0</span>
-        <button class="musicbutton wordbutton">Musical Instrument</button>
+        <input type="checkbox" class="muscprof"/>
+        <span class="muscmod">0</span>
+        <button class="muscbutton wordbutton">Musical Instrument</button>
+        <select class="muscability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="paintersprof"/>
-        <span class="paintersmod">0</span>
-        <button class="paintersbutton wordbutton">Painter's Supplies</button>
+        <input type="checkbox" class="pntrprof"/>
+        <span class="pntrmod">0</span>
+        <button class="pntrbutton wordbutton">Painter's Supplies</button>
+        <select class="pntrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="pottersprof"/>
-        <span class="pottersmod">0</span>
-        <button class="pottersbutton wordbutton">Potter's Supplies</button>
+        <input type="checkbox" class="pttrprof"/>
+        <span class="pttrmod">0</span>
+        <button class="pttrbutton wordbutton">Potter's Supplies</button>
+        <select class="pttrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="smithsprof"/>
-        <span class="smithsmod">0</span>
-        <button class="smithsbutton wordbutton">Smith's Tools</button>
+        <input type="checkbox" class="smthprof"/>
+        <span class="smthmod">0</span>
+        <button class="smthbutton wordbutton">Smith's Tools</button>
+        <select class="smthability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="tinkersprof"/>
-        <span class="tinkersmod">0</span>
-        <button class="tinkersbutton wordbutton">Tinker's Tools</button>
+        <input type="checkbox" class="tnkrprof"/>
+        <span class="tnkrmod">0</span>
+        <button class="tnkrbutton wordbutton">Tinker's Tools</button>
+        <select class="tnkrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="weaversprof"/>
-        <span class="weaversmod">0</span>
-        <button class="weaversbutton wordbutton">Weaver's Supplies</button>
+        <input type="checkbox" class="wevrprof"/>
+        <span class="wevrmod">0</span>
+        <button class="wevrbutton wordbutton">Weaver's Supplies</button>
+        <select class="wevrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
 
-        <input type="checkbox" class="woodcarversprof"/>
-        <span class="woodcarversmod">0</span>
-        <button class="woodcarversbutton wordbutton">Woodcarver's Tools</button>
+        <input type="checkbox" class="wcrvprof"/>
+        <span class="wcrvmod">0</span>
+        <button class="wcrvbutton wordbutton">Woodcarver's Tools</button>
+        <select class="wcrvability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>
       </div>  
     </div>
 
     <div class="core">
       <div class="vitals">
-        <div class="insp vital vital-narrow">
-          <input type="checkbox" class="inspprof" name="attr_insp">
-          <label>INSP</label>
+
+        <div class="vitals-one">          
+          <div class="ac vital">
+            <label>AC</label>
+            <input name="attr_ac" type="text">
+          </div>
+          <div class="init vital">
+            <label>INIT</label>
+            <input name="attr_init_mod" type="text">
+          </div>
+          <div class="speed vital">
+            <label>SPEED</label>
+            <input name="attr_speed" type="text">
+          </div>
         </div>
-        <div class="prof vital vital-narrow">
-          <span name="attr_prof">+5</span>
-          <label>PROF</label>
+
+        <div class="vitals-two">
+          <div class="hpmax vital">
+            <label>MAX HP</label>
+            <input name="attr_max_hp" type="text">
+          </div>
+          <div class="hpcurr vital">
+            <label>Hit Points</label>
+            <input name="attr_current_hp" type="text">
+          </div>
+          <div class="hptemp vital">   
+            <label>TEMP HP</label>
+            <input name="attr_temp_hp" type="text">       
+          </div>
         </div>
-        <div class="ac vital">
-          <label>AC</label>
-          <input name="attr_ac" type="text">
+
+        <div class="vitals-three">
+          <div class="hitdice vital">
+            <input name="attr_hit_dice" type="text">
+            <label>HIT DICE</label>
+          </div>
+          <div class="deathsv vital">
+            <span class="success">Success</span>
+            <input type="checkbox" class="succ1">
+            <input type="checkbox" class="succ2">
+            <input type="checkbox" class="succ3">
+            <span class="failure">Failure</span>
+            <input type="checkbox" class="fail1">
+            <input type="checkbox" class="fail2">
+            <input type="checkbox" class="fail3">
+            <label class="dslabel">DEATH SAVES</label>
+          </div>
         </div>
-        <div class="init vital">
-          <label>INIT</label>
-          <input name="attr_init_mod" type="text">
-        </div>
-        <div class="speed vital">
-          <label>SPEED</label>
-          <input name="attr_speed" type="text">
-        </div>
-        <div class="hpmax vital">
-          <label>MAX HP</label>
-          <input name="attr_max_hp" type="text">
-        </div>
-        <div class="hpcurr vital">
-          <label>Hit Points</label>
-          <input name="attr_current_hp" type="text">
-        </div>
-        <div class="hptemp vital">   
-          <label>TEMP HP</label>
-          <input name="attr_temp_hp" type="text">       
-        </div>
-        <div class="hitdice vital">
-          <input name="attr_hit_dice" type="text">
-          <label>HIT DICE</label>
-        </div>
-        <div class="deathsv vital">
-          <span class="success">Success</span>
-          <input type="checkbox" class="succ1">
-          <input type="checkbox" class="succ2">
-          <input type="checkbox" class="succ3">
-          <span class="failure">Failure</span>
-          <input type="checkbox" class="fail1">
-          <input type="checkbox" class="fail2">
-          <input type="checkbox" class="fail3">
-          <label class="dslabel">DEATH SAVES</label>
-        </div>
+
       </div>  
+
       <div class="shortcuts section">Shortcuts</div>  
+
       <div class="inventory section">Inventory</div>  
+
     </div>
 
     <div class="bio">
       <div class="levels section"></div>
-      <div class="appearance"> 
+      <div class="appearance section"> 
         <label class="appearancelabel">APPEARANCE</label>     
         <div class="age"> <input name="attr_age" type="text"/> <span>Age</span> </div>
         <div class="size"> <input name="attr_size" type="text"/> <span>Size</span> </div>
