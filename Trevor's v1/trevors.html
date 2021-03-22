@@ -1,10 +1,12 @@
 <div class="main">
     <div class="header">
-      <label>Character Name<input name="attr_character_name" type="text"/></label>
+      <button class="calcButton" type="action" name="act_calc">x</button>
+      <input name="attr_character_name" type="text"/>
+      <label>Character Name</label>
     </div>
     <div class="charbox">
       <div class="race"> <input name="attr_race" type="text"/> <span>Race</span> </div>
-      <div class="level"> <input name="attr_level" type="text"/> <span>Level</span> </div> 
+      <div class="characterlevel"> <input name="attr_level" type="text"/> <span>Character Level</span> </div> 
       <div class="pronouns"> <input name="attr_pronouns" type="text"/> <span>Pronouns</span> </div> 
       <div class="playername"> <input name="attr_player_name" type="text"/> <span>Player Name</span> </div>
       <div class="alignment"> <input name="attr_alignment" type="text"/> <span>Alignment</span> </div>
@@ -44,61 +46,64 @@
           <input class="score chascore" type="text" name="attr_cha"/>
         </div>
       </div>
-      <div class="weapons">
-        WEAPONS
+
+      <div class="blank">
+        
       </div>
-      <div class="armor">
-        ARMOR
-      </div>
+      
     </div>
 
     <div class="skills">
-      <div class="saves section">
-        <label class="savelabel">SAVING THROWS</label>
-
-        <input type="checkbox" class="strprof"/>
-        <span class="strsavemod">0</span>
-        <button class="strbutton wordbutton">Strength</button>
-
-        <input type="checkbox" class="dexprof"/>
-        <span class="dexsavemod">0</span>
-        <button class="dexbutton wordbutton">Dexterity</button>
-
-        <input type="checkbox" class="conprof"/>
-        <span class="consavemod">0</span>
-        <button class="conbutton wordbutton">Constitution</button>
-
-        <input type="checkbox" class="intprof"/>
-        <span class="intsavemod">0</span>
-        <button class="intbutton wordbutton">Intelligence</button>
-
-        <input type="checkbox" class="wisprof"/>
-        <span class="wissavemod">0</span>
-        <button class="wisbutton wordbutton">Wisdom</button>
-
-        <input type="checkbox" class="chaprof"/>
-        <span class="chasavemod">0</span>
-        <button class="chabutton wordbutton">Charisma</button>
-      </div>
 
       <div class="inspprof">
         <div class="insp">
-          <input type="checkbox" class="inspprof" name="attr_insp">
-          <label>INSP</label>
+          <input id="myInput" type="checkbox" name="attr_insp" value="@{insp}"/> 
+          <label for="myInput"></label>
+
+          <span class="insplabel">INSPIRATION</span>
         </div>
-        <div class="prof vital vital-narrow">
-          <span name="attr_prof">+5</span>
-          <label>PROF</label>
+
+        <div class="prof">
+          <input type="text" name="attr_profbonus" value="@{profbonus}"/> 
+          <span class="proflabel">PROFICIENCY BONUS</span>
         </div>
+      </div>
+
+      <div class="saves section">
+        <label class="savelabel">SAVING THROWS</label>
+
+        <input type="checkbox" class="strprof" name="attr_strsaveprof"/>
+        <input type="text" class="strsavemod" name="attr_strsavemod" value="@{strsavemod}"/>
+        <button class="strbutton wordbutton">Strength</button>
+
+        <input type="checkbox" class="dexprof" name="attr_dexsaveprof"/>
+        <input type="text" class="dexsavemod" name="attr_dexsavemod" value="@{dexsavemod}"/>
+        <button class="dexbutton wordbutton">Dexterity</button>
+
+        <input type="checkbox" class="conprof" name="attr_consaveprof"/>
+        <input type="text" class="consavemod" name="attr_consavemod" value="@{consavemod}"/>
+        <button class="conbutton wordbutton">Constitution</button>
+
+        <input type="checkbox" class="intprof" name="attr_intsaveprof"/>
+        <input type="text" class="intsavemod" name="attr_intsavemod" value="@{intsavemod}"/>
+        <button class="intbutton wordbutton">Intelligence</button>
+
+        <input type="checkbox" class="wisprof" name="attr_wissaveprof"/>
+        <input type="text" class="wissavemod" name="attr_wissavemod" value="@{wissavemod}"/>
+        <button class="wisbutton wordbutton">Wisdom</button>
+
+        <input type="checkbox" class="chaprof" name="attr_chasaveprof"/>
+        <input type="text" class="chasavemod" name="attr_chasavemod" value="@{chasavemod}"/>
+        <button class="chabutton wordbutton">Charisma</button>
       </div>
 
       <div class="skilllist section">
         <label class="skillslabel">SKILLS</label>
 
-        <input type="checkbox" class="acroprof"/>
-        <span class="acromod">0</span>
+        <input type="checkbox" class="acroprof" name="attr_acroprof"/>
+        <input type="text" class="acromod" name="attr_acromod" value="@{acromod}"/>
         <button class="acrobutton wordbutton">Acrobatics</button>
-        <select class="acroability">
+        <select class="acroability" name="attr_acroability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -107,10 +112,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="athlprof"/>
-        <span class="athlmod">0</span>
+        <input type="checkbox" class="athlprof" name="attr_athlprof"/>
+        <input type="text" class="athlmod" name="attr_athlmod" value="@{athlmod}"/>
         <button class="athlbutton wordbutton">Athletics</button>
-        <select class="athlability">
+        <select class="athlability" name="attr_athlability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -119,10 +124,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="anhnprof"/>
-        <span class="anhnmod">0</span>
+        <input type="checkbox" class="anhnprof" name="attr_anhnprof"/>
+        <input type="text" class="anhnmod" name="attr_anhnmod" value="@{anhnmod}"/>
         <button class="anhnbutton wordbutton">Animal Handling</button>
-        <select class="anhnability">
+        <select class="anhnability" name="attr_anhnability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -131,10 +136,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="insiprof"/>
-        <span class="insimod">0</span>
+        <input type="checkbox" class="insiprof" name="attr_insiprof"/>
+        <input type="text" class="insimod" name="attr_insimod" value="@{insimod}"/>
         <button class="insibutton wordbutton">Insight</button>
-        <select class="insiability">
+        <select class="insiability" name="attr_insiability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -143,10 +148,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="intiprof"/>
-        <span class="intimod">0</span>
+        <input type="checkbox" class="intiprof" name="attr_intiprof"/>
+        <input type="text" class="intimod" name="attr_intimod" value="@{intimod}"/>
         <button class="intibutton wordbutton">Intimidation</button>
-        <select class="intiability">
+        <select class="intiability" name="attr_intiability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -155,10 +160,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="knowprof"/>
-        <span class="knowmod">0</span>
+        <input type="checkbox" class="knowprof" name="attr_knowprof"/>
+        <input type="text" class="knowmod" name="attr_knowmod" value="@{knowmod}"/>
         <button class="knowbutton wordbutton">Knowledge</button>
-        <select class="knowability">
+        <select class="knowability" name="attr_knowability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -167,10 +172,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="mediprof"/>
-        <span class="medimod">0</span>
+        <input type="checkbox" class="mediprof" name="attr_mediprof"/>
+        <input type="text" class="medimod" name="attr_medimod" value="@{medimod}"/>
         <button class="medibutton wordbutton">Medicine</button>
-        <select class="mediability">
+        <select class="mediability" name="attr_mediability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -179,10 +184,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="natrprof"/>
-        <span class="natrmod">0</span>
+        <input type="checkbox" class="natrprof" name="attr_natrprof"/> 
+        <input type="text" class="natrmod" name="attr_natrmod" value="@{natrmod}"/>
         <button class="natrbutton wordbutton">Nature</button>
-        <select class="athlacroability">
+        <select class="natrability" name="attr_natrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -191,10 +196,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="srchprof"/>
-        <span class="srchmod">0</span>
+        <input type="checkbox" class="srchprof" name="attr_srchprof"/>
+        <input type="text" class="srchmod" name="attr_srchmod" value="@{srchmod}"/>
         <button class="srchbutton wordbutton">Search</button>
-        <select class="srchability">
+        <select class="srchability" name="attr_srchability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -203,10 +208,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="spcfprof"/>
-        <span class="spcfmod">0</span>
+        <input type="checkbox" class="spcfprof" name="attr_spcfprof"/>
+        <input type="text" class="spcfmod" name="attr_spcfmod" value="@{spcfmod}"/>
         <button class="spcfbutton wordbutton">Speechcraft</button>
-        <select class="spcfability">
+        <select class="spcfability" name="attr_spcfability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -215,10 +220,10 @@
           <option value="CHA">(CHA)</option>
         </select>
         
-        <input type="checkbox" class="stlhprof"/>
-        <span class="stlhmod">0</span>
+        <input type="checkbox" class="stlhprof" name="attr_stlhprof"/>
+        <input type="text" class="stlhmod" name="attr_stlhmod" value="@{stlhmod}"/>
         <button class="stlhbutton wordbutton">Stealth</button>
-        <select class="stlhability">
+        <select class="stlhability" name="attr_stlhability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -227,10 +232,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="swimprof"/>
-        <span class="swimmod">0</span>
+        <input type="checkbox" class="swimprof" name="attr_swimprof"/>
+        <input type="text" class="swimmod" name="attr_swimmod" value="@{swimmod}"/>
         <button class="swimbutton wordbutton">Swimming</button>
-        <select class="swimability">
+        <select class="swimability" name="attr_swimability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -240,13 +245,101 @@
         </select>
       </div>
 
-      <div class="tools section">
-        <label class="toolslabel">TOOLS</label>
+      <div class="advtools section">
+        <label class="advtoolslabel">ADVENTURER TOOLS</label>
 
-        <input type="checkbox" class="alchprof"/>
-        <span class="alchmod">0</span>
+        <input type="checkbox" class="clmbprof" name="attr_clmbprof"/>
+        <input type="text" class="clmbmod" name="attr_clmbmod" value="@{clmbmod}"/>
+        <button class="clmbbutton wordbutton">Climber's Kit</button>
+        <select class="clmbability" name="attr_clmbability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>        
+
+        <input type="checkbox" class="disgprof" name="attr_disgprof"/>
+        <input type="text" class="disgmod" name="attr_disgmod" value="@{disgmod}"/>
+        <button class="disgbutton wordbutton">Disguise Kit</button>
+        <select class="disgability" name="attr_disgability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+
+        <input type="checkbox" class="forgprof" name="attr_forgprof"/>
+        <input type="text" class="forgmod" name="attr_forgmod" value="@{forgmod}"/>
+        <button class="forgbutton wordbutton">Forgery Kit</button>
+        <select class="forgability" name="attr_forgability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+
+        <input type="checkbox" class="herbprof" name="attr_herbprof"/>
+        <input type="text" class="herbmod" name="attr_herbmod" value="@{herbmod}"/>
+        <button class="herbbutton wordbutton">Herbalism Kit</button>
+        <select class="herbability" name="attr_herbability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+
+        <input type="checkbox" class="navgprof" name="attr_navgprof"/>
+        <input type="text" class="navgmod" name="attr_navgmod" value="@{navgmod}"/>
+        <button class="navgbutton wordbutton">Navigator's Tools</button>
+        <select class="navgability" name="attr_navgability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+
+        <input type="checkbox" class="psnrprof" name="attr_psnrprof"/>
+        <input type="text" class="psnrmod" name="attr_psnrmod" value="@{psnrmod}"/>
+        <button class="psnrbutton wordbutton">Poisoner's Kit</button>
+        <select class="psnrability" name="attr_psnrability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+
+        <input type="checkbox" class="thvsprof" name="attr_thvsprof"/>
+        <input type="text" class="thvsmod" name="attr_thvsmod" value="@{thvsmod}"/>
+        <button class="thvsbutton wordbutton">Thieves' Tools</button>
+        <select class="thvsability" name="attr_thvsability">
+          <option value="STR">(STR)</option>
+          <option value="DEX">(DEX)</option>
+          <option value="CON">(CON)</option>
+          <option value="INT">(INT)</option>
+          <option value="WIS">(WIS)</option>
+          <option value="CHA">(CHA)</option>
+        </select>   
+      </div>
+
+      <div class="artisantools section">
+        <label class="artisantoolslabel">ARTISAN TOOLS</label>
+
+        <input type="checkbox" class="alchprof" name="attr_alchprof"/>
+        <input type="text" class="alchmod" name="attr_alchmod" value="@{alchmod}"/>
         <button class="alchbutton wordbutton">Alchemist's Supplies</button>
-        <select class="alchability">
+        <select class="alchability" name="attr_alchability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -255,10 +348,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="brewprof"/>
-        <span class="brewmod">0</span>
+        <input type="checkbox" class="brewprof" name="attr_brewprof"/>
+        <input type="text" class="brewmod" name="attr_brewmod" value="@{brewmod}"/>
         <button class="brewbutton wordbutton">Brewers's Supplies</button>
-        <select class="brewability">
+        <select class="brewability" name="attr_brewability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -267,10 +360,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="cligprof"/>
-        <span class="cligmod">0</span>
+        <input type="checkbox" class="cligprof" name="attr_cligprof"/>
+        <input type="text" class="cligmod" name="attr_cligmod" value="@{cligmod}"/>
         <button class="cligbutton wordbutton">Calligrapher's Supplies</button>
-        <select class="cligability">
+        <select class="cligability" name="attr_cligability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -279,10 +372,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="cpntprof"/>
-        <span class="cpntmod">0</span>
+        <input type="checkbox" class="cpntprof" name="attr_cpntprof"/>
+        <input type="text" class="cpntmod" name="attr_cpntmod" value="@{cpntmod}"/>
         <button class="cpntbutton wordbutton">Carpenter's Tools</button>
-        <select class="cpntability">
+        <select class="cpntability" name="attr_cpntability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -291,10 +384,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="crtgprof"/>
-        <span class="crtgmod">0</span>
+        <input type="checkbox" class="crtgprof" name="attr_crtgprof"/>
+        <input type="text" class="crtgmod" name="attr_crtgmod" value="@{crtgmod}"/>
         <button class="crtgbutton wordbutton">Cartographer's Tools</button>
-        <select class="crtgability">
+        <select class="crtgability" name="attr_crtgability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -303,10 +396,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="cobbprof"/>
-        <span class="cobbmod">0</span>
+        <input type="checkbox" class="cobbprof" name="attr_cobbprof"/>
+        <input type="text" class="cobbmod" name="attr_cobbmod" value="@{cobbmod}"/>
         <button class="cobbbutton wordbutton">Cobbler's Tools</button>
-        <select class="cobbability">
+        <select class="cobbability" name="attr_cobbability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -315,10 +408,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="cookprof"/>
-        <span class="cookmod">0</span>
+        <input type="checkbox" class="cookprof" name="attr_cookprof"/>
+        <input type="text" class="cookmod" name="attr_cookmod" value="@{cookmod}"/>
         <button class="cookbutton wordbutton">Cook's Utensils</button>
-        <select class="cookability">
+        <select class="cookability" name="attr_cookability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -327,10 +420,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="glbwprof"/>
-        <span class="glbwmod">0</span>
+        <input type="checkbox" class="glbwprof" name="attr_glbwprof"/>
+        <input type="text" class="glbwmod" name="attr_glbwmod" value="@{glbwmod}"/>
         <button class="glbwbutton wordbutton">Glassblower's Tools</button>
-        <select class="glbwability">
+        <select class="glbwability" name="attr_glbwability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -339,10 +432,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="jwlrprof"/>
-        <span class="jwlrmod">0</span>
+        <input type="checkbox" class="jwlrprof" name="attr_jwlrprof"/>
+        <input type="text" class="jwlrmod" name="attr_jwlrmod" value="@{jwlrmod}"/>
         <button class="jwlrbutton wordbutton">Jeweler's Tools</button>
-        <select class="jwlrability">
+        <select class="jwlrability" name="attr_jwlrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -351,10 +444,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="lthrprof"/>
-        <span class="lthrmod">0</span>
+        <input type="checkbox" class="lthrprof" name="attr_lthrprof"/>
+        <input type="text" class="lthrmod" name="attr_lthrmod" value="@{lthrmod}"/>
         <button class="lthrbutton wordbutton">Leatherworker's Tools</button>
-        <select class="lthrability">
+        <select class="lthrability" name="attr_lthrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -363,10 +456,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="masnprof"/>
-        <span class="masnmod">0</span>
+        <input type="checkbox" class="masnprof" name="attr_masnprof"/>
+        <input type="text" class="masnmod" name="attr_masnmod" value="@{masnmod}"/>
         <button class="masnbutton wordbutton">Mason's Tools</button>
-        <select class="masnability">
+        <select class="masnability" name="attr_masnability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -375,10 +468,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="muscprof"/>
-        <span class="muscmod">0</span>
+        <input type="checkbox" class="muscprof" name="attr_muscprof"/>
+        <input type="text" class="muscmod" name="attr_muscmod" value="@{muscmod}"/>
         <button class="muscbutton wordbutton">Musical Instrument</button>
-        <select class="muscability">
+        <select class="muscability" name="attr_muscability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -387,10 +480,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="pntrprof"/>
-        <span class="pntrmod">0</span>
+        <input type="checkbox" class="pntrprof" name="attr_pntrprof"/>
+        <input type="text" class="pntrmod" name="attr_pntrmod" value="@{pntrmod}"/>
         <button class="pntrbutton wordbutton">Painter's Supplies</button>
-        <select class="pntrability">
+        <select class="pntrability" name="attr_pntrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -399,10 +492,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="pttrprof"/>
-        <span class="pttrmod">0</span>
+        <input type="checkbox" class="pttrprof" name="attr_pttrprof"/>
+        <input type="text" class="pttrmod" name="attr_pttrmod" value="@{pttrmod}"/>
         <button class="pttrbutton wordbutton">Potter's Supplies</button>
-        <select class="pttrability">
+        <select class="pttrability" name="attr_pttrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -411,10 +504,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="smthprof"/>
-        <span class="smthmod">0</span>
+        <input type="checkbox" class="smthprof" name="attr_smthprof"/>
+        <input type="text" class="smthmod" name="attr_smthmod" value="@{smthmod}"/>
         <button class="smthbutton wordbutton">Smith's Tools</button>
-        <select class="smthability">
+        <select class="smthability" name="attr_smthability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -423,10 +516,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="tnkrprof"/>
-        <span class="tnkrmod">0</span>
+        <input type="checkbox" class="tnkrprof" name="attr_tnkrprof"/>
+        <input type="text" class="tnkrmod" name="attr_tnkrmod" value="@{tnkrmod}"/>
         <button class="tnkrbutton wordbutton">Tinker's Tools</button>
-        <select class="tnkrability">
+        <select class="tnkrability" name="attr_tnkrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -435,10 +528,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="wevrprof"/>
-        <span class="wevrmod">0</span>
+        <input type="checkbox" class="wevrprof" name="attr_wevrprof"/>
+        <input type="text" class="wevrmod" name="attr_wevrmod" value="@{wevrmod}"/>
         <button class="wevrbutton wordbutton">Weaver's Supplies</button>
-        <select class="wevrability">
+        <select class="wevrability" name="attr_wevrability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -447,10 +540,10 @@
           <option value="CHA">(CHA)</option>
         </select>
 
-        <input type="checkbox" class="wcrvprof"/>
-        <span class="wcrvmod">0</span>
+        <input type="checkbox" class="wcrvprof" name="attr_wcrvprof"/>
+        <input type="text" class="wcrvmod" name="attr_wcrvmod" value="@{wcrvmod}"/>
         <button class="wcrvbutton wordbutton">Woodcarver's Tools</button>
-        <select class="wcrvability">
+        <select class="wcrvability" name="attr_wcrvability">
           <option value="STR">(STR)</option>
           <option value="DEX">(DEX)</option>
           <option value="CON">(CON)</option>
@@ -470,7 +563,7 @@
             <input name="attr_ac" type="text">
           </div>
           <div class="init vital">
-            <label>INIT</label>
+            <label>INITIATIVE</label>
             <input name="attr_init_mod" type="text">
           </div>
           <div class="speed vital">
@@ -479,35 +572,39 @@
           </div>
         </div>
 
-        <div class="vitals-two">
-          <div class="hpmax vital">
-            <label>MAX HP</label>
-            <input name="attr_max_hp" type="text">
+        <div class="vitals-two section">
+          <div class="hptemp vital">   
+            <label>Temp HP</label>
+            <input name="attr_temp_hp" type="text">       
           </div>
           <div class="hpcurr vital">
             <label>Hit Points</label>
             <input name="attr_current_hp" type="text">
           </div>
-          <div class="hptemp vital">   
-            <label>TEMP HP</label>
-            <input name="attr_temp_hp" type="text">       
+          <div class="hpmax vital">
+            <label>Max HP</label>
+            <input name="attr_max_hp" type="text">
           </div>
         </div>
 
         <div class="vitals-three">
-          <div class="hitdice vital">
+          <div class="hitdice vital section">
             <input name="attr_hit_dice" type="text">
             <label>HIT DICE</label>
           </div>
-          <div class="deathsv vital">
-            <span class="success">Success</span>
-            <input type="checkbox" class="succ1">
-            <input type="checkbox" class="succ2">
-            <input type="checkbox" class="succ3">
-            <span class="failure">Failure</span>
-            <input type="checkbox" class="fail1">
-            <input type="checkbox" class="fail2">
-            <input type="checkbox" class="fail3">
+          <div class="deathsv section">
+            <div class="succs">
+              <span class="success">3</span>
+              <input type="checkbox" class="succ1" id="succ1"> <label for="succ1"></label>
+              <input type="checkbox" class="succ2" id="succ2"> <label for="succ2"></label>
+              <input type="checkbox" class="succ3" id="succ3"> <label for="succ3"></label>
+            </div>
+            <div class="fails">
+              <span class="failure">*</span>
+              <input type="checkbox" class="fail1" id="fail1"> <label for="fail1"></label>
+              <input type="checkbox" class="fail2" id="fail2"> <label for="fail2"></label>
+              <input type="checkbox" class="fail3" id="fail3"> <label for="fail3"></label>
+            </div>
             <label class="dslabel">DEATH SAVES</label>
           </div>
         </div>
@@ -521,7 +618,30 @@
     </div>
 
     <div class="bio">
-      <div class="levels section"></div>
+      <div class="levels section">
+
+        <label>CLASS & LEVELS</label>  
+        <fieldset class="repeating_classlevel">          
+          <div class="classlevel">
+            <div class="class"> 
+              <input type="text"  name="attr_class">
+              <span>Class</span> 
+            </div> 
+
+            <div class="subclass"> 
+              <input type="text"  name="attr_subclass">
+              <span>Subclass</span> 
+            </div> 
+
+            <div class="level"> 
+              <input type="text"  name="attr_classlevel">
+              <span>Level</span> 
+            </div>             
+          </div>
+        </fieldset>
+
+      </div>
+
       <div class="appearance section"> 
         <label class="appearancelabel">APPEARANCE</label>     
         <div class="age"> <input name="attr_age" type="text"/> <span>Age</span> </div>
@@ -533,88 +653,227 @@
         <div class="skin"> <input name="attr_skin" type="text"/> <span>Skin</span> </div>
         <div class="marks"> <input name="attr_marks" type="text"/> <span>Marks</span> </div>
       </div>
+
       <div class="personality">   
         <div class="trait"> <span>TRAIT</span> <textarea name="attr_trait"></textarea> </div>
         <div class="ideal"> <span>IDEAL</span> <textarea name="attr_ideal"></textarea> </div>
         <div class="bond"> <span>BOND</span> <textarea name="attr_bond"></textarea> </div>
         <div class="flaw"> <span>FLAW</span> <textarea name="attr_flaw"></textarea> </div>
       </div>
-      <div class="languages section"></div>
+
+      <div class="proficiencies section">
+        <label>PROFICIENCIES</label>
+        <fieldset class="repeating_proflist">
+          <div class="proflist">
+            <select name="attr_proftype">
+              <option value="WEAPON">WEAPON</option>
+              <option value="ARMOR">ARMOR</option>
+              <option value="LANGUAGE">LANGUAGE</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+            <input type="text" name="attr_profname">
+          </div>
+        </fieldset>        
+      </div>
     </div>
 
 </div>
 
 <script type="text/worker">
-  
-  on("change:str", function() {
-    getAttrs(["str"], function(values) {
+
+  var checkMyMath = function(){
+    getAttrs(["level",
+              "str","dex","con","int","wis","cha",
+              "strsaveprof","dexsaveprof","consaveprof","intsaveprof","wissaveprof","chasaveprof",
+              "acroprof", "athlprof", "anhnprof", "insiprof", "intiprof", "knowprof", 
+                  "mediprof", "natrprof", "srchprof", "spcfprof", "stlhprof", "swimprof",
+              "acroability", "athlability", "anhnability", "insiability", "intiability", "knowability", 
+                  "mediability", "natrability", "srchability", "spcfability", "stlhability", "swimability",
+              "clmbability", "disgability", "forgability", "herbability", "navgability", "psnrability", "thvsability",  
+                  "clmbprof", "disgprof", "forgprof", "herbprof", "navgprof", "psnrprof", "thvsprof", 
+              "alchability", "brewability", "cligability", "cpntability", "crtgability", "cobbability", 
+                  "cookability", "glbwability", "jwlrability", "lthrability", "masnability", "muscability", 
+                  "pntrability", "pttrability", "smthability", "tnkrability", "wevrability", "wcrvability", 
+              "alchprof", "brewprof", "cligprof", "cpntprof", "crtgprof", "cobbprof", 
+                  "cookprof", "glbwprof", "jwlrprof", "lthrprof", "masnprof", "muscprof", 
+                  "pntrprof", "pttrprof", "smthprof", "tnkrprof", "wevrprof", "wcrvprof"
+
+
+              ], function(values) {  
+
+      console.log('Checking your math...');
+
+      var profBonus = Math.floor(values.level / 4) + 2;
+
+      /* Set stat base mods for later uses */
       var strMod = Math.floor((values.str - 10) / 2);
-      if(strMod > 0){
-        var plus = "+";
-        strMod = plus.concat(strMod);
-      }
-
-      setAttrs({ str_mod: strMod });
-    });
-  });
-
-  on("change:dex", function() {
-    getAttrs(["dex"], function(values) {
       var dexMod = Math.floor((values.dex - 10) / 2);
-      if(dexMod > 0){
-        var plus = "+";
-        dexMod = plus.concat(dexMod);
-      }
-
-      setAttrs({ dex_mod: dexMod });
-    });
-  });
-
-  on("change:con", function() {
-    getAttrs(["con"], function(values) {
       var conMod = Math.floor((values.con - 10) / 2);
-      if(conMod > 0){
-        var plus = "+";
-        conMod = plus.concat(conMod);
-      }
-
-      setAttrs({ con_mod: conMod });
-    });
-  });
-
-  on("change:int", function() {
-    getAttrs(["int"], function(values) {
       var intMod = Math.floor((values.int - 10) / 2);
-      if(intMod > 0){
-        var plus = "+";
-        intMod = plus.concat(intMod);
-      }
-
-      setAttrs({ int_mod: intMod });
-    });
-  });
-
-  on("change:wis", function() {
-    getAttrs(["wis"], function(values) {
       var wisMod = Math.floor((values.wis - 10) / 2);
-      if(wisMod > 0){
-        var plus = "+";
-        wisMod = plus.concat(wisMod);
-      }
-
-      setAttrs({ wis_mod: wisMod });
-    });
-  });
-
-  on("change:cha", function() {
-    getAttrs(["cha"], function(values) {
       var chaMod = Math.floor((values.cha - 10) / 2);
-      if(chaMod > 0){
-        var plus = "+";
-        chaMod = plus.concat(chaMod);
-      }
 
-      setAttrs({ cha_mod: chaMod });
+      /* Determine save, skill, and tool bonuses */
+      /*saves*/
+      var strSaveMod = strMod + ( values.strsaveprof == "on" ? profBonus : 0 );
+      var dexSaveMod = dexMod + ( values.dexsaveprof == "on" ? profBonus : 0 );
+      var conSaveMod = conMod + ( values.consaveprof == "on" ? profBonus : 0 );
+      var intSaveMod = intMod + ( values.intsaveprof == "on" ? profBonus : 0 );
+      var wisSaveMod = wisMod + ( values.wissaveprof == "on" ? profBonus : 0 );
+      var chaSaveMod = chaMod + ( values.chasaveprof == "on" ? profBonus : 0 );
+
+      /*skills*/
+      var acroMod = (values.acroprof == "on" ? profBonus : 0)
+                  + (values.acroability == "STR" ? strMod : 0) + (values.acroability == "DEX" ? dexMod : 0) + (values.acroability == "CON" ? conMod : 0) 
+                  + (values.acroability == "INT" ? intMod : 0) + (values.acroability == "WIS" ? wisMod : 0) + (values.acroability == "CHA" ? chaMod : 0);
+      var athlMod = (values.athlprof == "on" ? profBonus : 0)
+                  + (values.athlability == "STR" ? strMod : 0) + (values.athlability == "DEX" ? dexMod : 0) + (values.athlability == "CON" ? conMod : 0) 
+                  + (values.athlability == "INT" ? intMod : 0) + (values.athlability == "WIS" ? wisMod : 0) + (values.athlability == "CHA" ? chaMod : 0);
+      var anhnMod = (values.anhnprof == "on" ? profBonus : 0)
+                  + (values.anhnability == "STR" ? strMod : 0) + (values.anhnability == "DEX" ? dexMod : 0) + (values.anhnability == "CON" ? conMod : 0) 
+                  + (values.anhnability == "INT" ? intMod : 0) + (values.anhnability == "WIS" ? wisMod : 0) + (values.anhnability == "CHA" ? chaMod : 0);
+      var insiMod = (values.insiprof == "on" ? profBonus : 0)
+                  + (values.insiability == "STR" ? strMod : 0) + (values.insiability == "DEX" ? dexMod : 0) + (values.insiability == "CON" ? conMod : 0) 
+                  + (values.insiability == "INT" ? intMod : 0) + (values.insiability == "WIS" ? wisMod : 0) + (values.insiability == "CHA" ? chaMod : 0);
+      var intiMod = (values.intiprof == "on" ? profBonus : 0)
+                  + (values.intiability == "STR" ? strMod : 0) + (values.intiability == "DEX" ? dexMod : 0) + (values.intiability == "CON" ? conMod : 0) 
+                  + (values.intiability == "INT" ? intMod : 0) + (values.intiability == "WIS" ? wisMod : 0) + (values.intiability == "CHA" ? chaMod : 0);
+      var knowMod = (values.knowprof == "on" ? profBonus : 0)
+                  + (values.knowability == "STR" ? strMod : 0) + (values.knowability == "DEX" ? dexMod : 0) + (values.knowability == "CON" ? conMod : 0) 
+                  + (values.knowability == "INT" ? intMod : 0) + (values.knowability == "WIS" ? wisMod : 0) + (values.knowability == "CHA" ? chaMod : 0);
+      var mediMod = (values.mediprof == "on" ? profBonus : 0)
+                  + (values.mediability == "STR" ? strMod : 0) + (values.mediability == "DEX" ? dexMod : 0) + (values.mediability == "CON" ? conMod : 0) 
+                  + (values.mediability == "INT" ? intMod : 0) + (values.mediability == "WIS" ? wisMod : 0) + (values.mediability == "CHA" ? chaMod : 0);
+      var natrMod = (values.natrprof == "on" ? profBonus : 0)
+                  + (values.natrability == "STR" ? strMod : 0) + (values.natrability == "DEX" ? dexMod : 0) + (values.natrability == "CON" ? conMod : 0) 
+                  + (values.natrability == "INT" ? intMod : 0) + (values.natrability == "WIS" ? wisMod : 0) + (values.natrability == "CHA" ? chaMod : 0);
+      var srchMod = (values.srchprof == "on" ? profBonus : 0)
+                  + (values.srchability == "STR" ? strMod : 0) + (values.srchability == "DEX" ? dexMod : 0) + (values.srchability == "CON" ? conMod : 0) 
+                  + (values.srchability == "INT" ? intMod : 0) + (values.srchability == "WIS" ? wisMod : 0) + (values.srchability == "CHA" ? chaMod : 0);
+      var spcfMod = (values.spcfprof == "on" ? profBonus : 0)
+                  + (values.spcfability == "STR" ? strMod : 0) + (values.spcfability == "DEX" ? dexMod : 0) + (values.spcfability == "CON" ? conMod : 0) 
+                  + (values.spcfability == "INT" ? intMod : 0) + (values.spcfability == "WIS" ? wisMod : 0) + (values.spcfability == "CHA" ? chaMod : 0);
+      var stlhMod = (values.stlhprof == "on" ? profBonus : 0)
+                  + (values.stlhability == "STR" ? strMod : 0) + (values.stlhability == "DEX" ? dexMod : 0) + (values.stlhability == "CON" ? conMod : 0) 
+                  + (values.stlhability == "INT" ? intMod : 0) + (values.stlhability == "WIS" ? wisMod : 0) + (values.stlhability == "CHA" ? chaMod : 0);
+      var swimMod = (values.swimprof == "on" ? profBonus : 0)
+                  + (values.swimability == "STR" ? strMod : 0) + (values.swimability == "DEX" ? dexMod : 0) + (values.swimability == "CON" ? conMod : 0) 
+                  + (values.swimability == "INT" ? intMod : 0) + (values.swimability == "WIS" ? wisMod : 0) + (values.swimability == "CHA" ? chaMod : 0);
+
+      /* adventurers tools */
+      var clmbMod = (values.clmbprof == "on" ? profBonus : 0)
+                  + (values.clmbability == "STR" ? strMod : 0) + (values.clmbability == "DEX" ? dexMod : 0) + (values.clmbability == "CON" ? conMod : 0) 
+                  + (values.clmbability == "INT" ? intMod : 0) + (values.clmbability == "WIS" ? wisMod : 0) + (values.clmbability == "CHA" ? chaMod : 0);
+      var disgMod = (values.disgprof == "on" ? profBonus : 0)
+                  + (values.disgability == "STR" ? strMod : 0) + (values.disgability == "DEX" ? dexMod : 0) + (values.disgability == "CON" ? conMod : 0) 
+                  + (values.disgability == "INT" ? intMod : 0) + (values.disgability == "WIS" ? wisMod : 0) + (values.disgability == "CHA" ? chaMod : 0);
+      var forgMod = (values.forgprof == "on" ? profBonus : 0)
+                  + (values.forgability == "STR" ? strMod : 0) + (values.forgability == "DEX" ? dexMod : 0) + (values.forgability == "CON" ? conMod : 0) 
+                  + (values.forgability == "INT" ? intMod : 0) + (values.forgability == "WIS" ? wisMod : 0) + (values.forgability == "CHA" ? chaMod : 0);
+      var herbMod = (values.herbprof == "on" ? profBonus : 0)
+                  + (values.herbability == "STR" ? strMod : 0) + (values.herbability == "DEX" ? dexMod : 0) + (values.herbability == "CON" ? conMod : 0) 
+                  + (values.herbability == "INT" ? intMod : 0) + (values.herbability == "WIS" ? wisMod : 0) + (values.herbability == "CHA" ? chaMod : 0);
+      var navgMod = (values.navgprof == "on" ? profBonus : 0)
+                  + (values.navgability == "STR" ? strMod : 0) + (values.navgability == "DEX" ? dexMod : 0) + (values.navgability == "CON" ? conMod : 0) 
+                  + (values.navgability == "INT" ? intMod : 0) + (values.navgability == "WIS" ? wisMod : 0) + (values.navgability == "CHA" ? chaMod : 0);
+      var psnrMod = (values.psnrprof == "on" ? profBonus : 0)
+                  + (values.psnrability == "STR" ? strMod : 0) + (values.psnrability == "DEX" ? dexMod : 0) + (values.psnrability == "CON" ? conMod : 0) 
+                  + (values.psnrability == "INT" ? intMod : 0) + (values.psnrability == "WIS" ? wisMod : 0) + (values.psnrability == "CHA" ? chaMod : 0);
+      var thvsMod = (values.thvsprof == "on" ? profBonus : 0)
+                  + (values.thvsability == "STR" ? strMod : 0) + (values.thvsability == "DEX" ? dexMod : 0) + (values.thvsability == "CON" ? conMod : 0) 
+                  + (values.thvsability == "INT" ? intMod : 0) + (values.thvsability == "WIS" ? wisMod : 0) + (values.thvsability == "CHA" ? chaMod : 0);
+
+      /* artisan tools */
+      var alchMod = (values.alchprof == "on" ? profBonus : 0)
+                  + (values.alchability == "STR" ? strMod : 0) + (values.alchability == "DEX" ? dexMod : 0) + (values.alchability == "CON" ? conMod : 0) 
+                  + (values.alchability == "INT" ? intMod : 0) + (values.alchability == "WIS" ? wisMod : 0) + (values.alchability == "CHA" ? chaMod : 0);
+      var brewMod = (values.brewprof == "on" ? profBonus : 0)
+                  + (values.brewability == "STR" ? strMod : 0) + (values.brewability == "DEX" ? dexMod : 0) + (values.brewability == "CON" ? conMod : 0) 
+                  + (values.brewability == "INT" ? intMod : 0) + (values.brewability == "WIS" ? wisMod : 0) + (values.brewability == "CHA" ? chaMod : 0);
+      var cligMod = (values.cligprof == "on" ? profBonus : 0)
+                  + (values.cligability == "STR" ? strMod : 0) + (values.cligability == "DEX" ? dexMod : 0) + (values.cligability == "CON" ? conMod : 0) 
+                  + (values.cligability == "INT" ? intMod : 0) + (values.cligability == "WIS" ? wisMod : 0) + (values.cligability == "CHA" ? chaMod : 0);
+      var cpntMod = (values.cpntprof == "on" ? profBonus : 0)
+                  + (values.cpntability == "STR" ? strMod : 0) + (values.cpntability == "DEX" ? dexMod : 0) + (values.cpntability == "CON" ? conMod : 0) 
+                  + (values.cpntability == "INT" ? intMod : 0) + (values.cpntability == "WIS" ? wisMod : 0) + (values.cpntability == "CHA" ? chaMod : 0);
+      var crtgMod = (values.crtgprof == "on" ? profBonus : 0)
+                  + (values.crtgability == "STR" ? strMod : 0) + (values.crtgability == "DEX" ? dexMod : 0) + (values.crtgability == "CON" ? conMod : 0) 
+                  + (values.crtgability == "INT" ? intMod : 0) + (values.crtgability == "WIS" ? wisMod : 0) + (values.crtgability == "CHA" ? chaMod : 0);
+      var cobbMod = (values.cobbprof == "on" ? profBonus : 0)
+                  + (values.cobbability == "STR" ? strMod : 0) + (values.cobbability == "DEX" ? dexMod : 0) + (values.cobbability == "CON" ? conMod : 0) 
+                  + (values.cobbability == "INT" ? intMod : 0) + (values.cobbability == "WIS" ? wisMod : 0) + (values.cobbability == "CHA" ? chaMod : 0);
+      var cookMod = (values.cookprof == "on" ? profBonus : 0)
+                  + (values.cookability == "STR" ? strMod : 0) + (values.cookability == "DEX" ? dexMod : 0) + (values.cookability == "CON" ? conMod : 0) 
+                  + (values.cookability == "INT" ? intMod : 0) + (values.cookability == "WIS" ? wisMod : 0) + (values.cookability == "CHA" ? chaMod : 0);
+      var glbwMod = (values.glbwprof == "on" ? profBonus : 0)
+                  + (values.glbwability == "STR" ? strMod : 0) + (values.glbwability == "DEX" ? dexMod : 0) + (values.glbwability == "CON" ? conMod : 0) 
+                  + (values.glbwability == "INT" ? intMod : 0) + (values.glbwability == "WIS" ? wisMod : 0) + (values.glbwability == "CHA" ? chaMod : 0);
+      var jwlrMod = (values.jwlrprof == "on" ? profBonus : 0)
+                  + (values.jwlrability == "STR" ? strMod : 0) + (values.jwlrability == "DEX" ? dexMod : 0) + (values.jwlrability == "CON" ? conMod : 0) 
+                  + (values.jwlrability == "INT" ? intMod : 0) + (values.jwlrability == "WIS" ? wisMod : 0) + (values.jwlrability == "CHA" ? chaMod : 0);
+      var lthrMod = (values.lthrprof == "on" ? profBonus : 0)
+                  + (values.lthrability == "STR" ? strMod : 0) + (values.lthrability == "DEX" ? dexMod : 0) + (values.lthrability == "CON" ? conMod : 0) 
+                  + (values.lthrability == "INT" ? intMod : 0) + (values.lthrability == "WIS" ? wisMod : 0) + (values.lthrability == "CHA" ? chaMod : 0);
+      var masnMod = (values.masnprof == "on" ? profBonus : 0)
+                  + (values.masnability == "STR" ? strMod : 0) + (values.masnability == "DEX" ? dexMod : 0) + (values.masnability == "CON" ? conMod : 0) 
+                  + (values.masnability == "INT" ? intMod : 0) + (values.masnability == "WIS" ? wisMod : 0) + (values.masnability == "CHA" ? chaMod : 0);
+      var muscMod = (values.muscprof == "on" ? profBonus : 0)
+                  + (values.muscability == "STR" ? strMod : 0) + (values.muscability == "DEX" ? dexMod : 0) + (values.muscability == "CON" ? conMod : 0) 
+                  + (values.muscability == "INT" ? intMod : 0) + (values.muscability == "WIS" ? wisMod : 0) + (values.muscability == "CHA" ? chaMod : 0);
+      var pntrMod = (values.pntrprof == "on" ? profBonus : 0)
+                  + (values.pntrability == "STR" ? strMod : 0) + (values.pntrability == "DEX" ? dexMod : 0) + (values.pntrability == "CON" ? conMod : 0) 
+                  + (values.pntrability == "INT" ? intMod : 0) + (values.pntrability == "WIS" ? wisMod : 0) + (values.pntrability == "CHA" ? chaMod : 0);
+      var pttrMod = (values.pttrprof == "on" ? profBonus : 0)
+                  + (values.pttrability == "STR" ? strMod : 0) + (values.pttrability == "DEX" ? dexMod : 0) + (values.pttrability == "CON" ? conMod : 0) 
+                  + (values.pttrability == "INT" ? intMod : 0) + (values.pttrability == "WIS" ? wisMod : 0) + (values.pttrability == "CHA" ? chaMod : 0);
+      var smthMod = (values.smthprof == "on" ? profBonus : 0)
+                  + (values.smthability == "STR" ? strMod : 0) + (values.smthability == "DEX" ? dexMod : 0) + (values.smthability == "CON" ? conMod : 0) 
+                  + (values.smthability == "INT" ? intMod : 0) + (values.smthability == "WIS" ? wisMod : 0) + (values.smthability == "CHA" ? chaMod : 0);
+      var tnkrMod = (values.tnkrprof == "on" ? profBonus : 0)
+                  + (values.tnkrability == "STR" ? strMod : 0) + (values.tnkrability == "DEX" ? dexMod : 0) + (values.tnkrability == "CON" ? conMod : 0) 
+                  + (values.tnkrability == "INT" ? intMod : 0) + (values.tnkrability == "WIS" ? wisMod : 0) + (values.tnkrability == "CHA" ? chaMod : 0);
+      var wevrMod = (values.wevrprof == "on" ? profBonus : 0)
+                  + (values.wevrability == "STR" ? strMod : 0) + (values.wevrability == "DEX" ? dexMod : 0) + (values.wevrability == "CON" ? conMod : 0) 
+                  + (values.wevrability == "INT" ? intMod : 0) + (values.wevrability == "WIS" ? wisMod : 0) + (values.wevrability == "CHA" ? chaMod : 0);
+      var wcrvMod = (values.wcrvprof == "on" ? profBonus : 0)
+                  + (values.wcrvability == "STR" ? strMod : 0) + (values.wcrvability == "DEX" ? dexMod : 0) + (values.wcrvability == "CON" ? conMod : 0) 
+                  + (values.wcrvability == "INT" ? intMod : 0) + (values.wcrvability == "WIS" ? wisMod : 0) + (values.wcrvability == "CHA" ? chaMod : 0);
+
+
+      /* Add plus sign to positive mods for display purposes */
+      var plus = "+";
+      if(strMod > 0){ strMod = plus.concat(strMod); }
+      if(dexMod > 0){ dexMod = plus.concat(dexMod); }
+      if(conMod > 0){ conMod = plus.concat(conMod); }
+      if(intMod > 0){ intMod = plus.concat(intMod); }
+      if(wisMod > 0){ wisMod = plus.concat(wisMod); }
+      if(chaMod > 0){ chaMod = plus.concat(chaMod); }
+
+
+
+      setAttrs({
+        profbonus: profBonus,
+
+        str_mod: strMod, dex_mod: dexMod, con_mod: conMod, int_mod: intMod, wis_mod: wisMod, cha_mod: chaMod,
+
+        strsavemod: strSaveMod, dexsavemod: dexSaveMod, consavemod: conSaveMod, intsavemod: intSaveMod, wissavemod: wisSaveMod, chasavemod: chaSaveMod,
+
+        acroMod: acroMod, athlMod: athlMod, anhnMod: anhnMod, insiMod: insiMod, intiMod: intiMod, knowMod: knowMod,
+            mediMod: mediMod, natrMod: natrMod, srchMod: srchMod, spcfMod: spcfMod, stlhMod: stlhMod, swimMod: swimMod,
+
+        clmbMod: clmbMod, disgMod: disgMod, forgMod: forgMod, herbMod: herbMod, navgMod: navgMod, psnrMod: psnrMod, thvsMod: thvsMod,
+
+        alchMod: alchMod, brewMod: brewMod, cligMod: cligMod, cpntMod: cpntMod, crtgMod: crtgMod, cobbMod: cobbMod, 
+        cookMod: cookMod, glbwMod: glbwMod, jwlrMod: jwlrMod, lthrMod: lthrMod, masnMod: masnMod, muscMod: muscMod,
+        pntrMod: pntrMod, pttrMod: pttrMod, smthMod: smthMod, tnkrMod: tnkrMod, wevrMod: wevrMod, wcrvMod: wcrvMod
+
+      });
     });
+  };
+
+  /* Primary "check my math" function */
+  on('clicked:calc', function() {
+    checkMyMath();
   });
+
 </script>

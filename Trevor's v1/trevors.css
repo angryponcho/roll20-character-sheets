@@ -5,7 +5,7 @@
   display: grid;
   min-width: 800px;
   grid-gap: 3px;
-  grid-template-columns: 90px 230px 230px 230px;
+  grid-template-columns: 90px 245px 250px 230px;
   grid-template-rows: 130px 1fr;
   grid-template-areas:"header  header  header  header"
                       "sidebar  skills  core  bio";
@@ -22,6 +22,18 @@
   background-repeat: no-repeat;
 }
 
+.calcButton {
+  float: left;
+  font-family: pictos;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
+  padding: 0px 0px 0px 0px;
+}
+
 .charbox {
   grid-column-start: 3;
   grid-column-end: 5;
@@ -32,10 +44,10 @@
 
   display: grid;
   grid-column-gap: 3px;
-  padding-top: 15px;
+  padding-top: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 40px 40px;
-  grid-template-areas:"race level pronouns"
+  grid-template-rows: 45px 45px;
+  grid-template-areas:"race characterlevel pronouns"
                       "playername alignment charbg";
 }
 
@@ -62,18 +74,24 @@
 
 .pronouns { grid-area: pronouns; }
 .race { grid-area: race; }
-.level { grid-area: level; }
+.characterlevel { grid-area: characterlevel; }
 .playername { grid-area: playername; }
 .alignment { grid-area: alignment; }
 .charbg { grid-area: charbg; }
 
 .header label {
-  padding: 55px 0px 0px 55px;
+  padding: 94px 0px 0px 80px;
+  font-weight: bold;
+  font-size: 8pt;
 }
 
 .header input {
+  float: left;
   background: transparent;
   border: none;
+  margin: 55px 0px 0px 25px;
+  font-size: 16pt;
+  font-weight: bold;
 }
 
 /***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
@@ -86,10 +104,9 @@
 
   display: grid;
   grid-template-columns: 90px;
-  grid-template-rows: 655px 1fr 1fr;
+  grid-template-rows: 655px 1fr;
   grid-template-areas:"scores"
-                      "weapons"
-                      "armor";
+                      "blank";
 }
 
 /*---SIDEBAR - SCORES---*/
@@ -247,9 +264,14 @@
   text-align: center;
 }
 
+.blank {
+  grid-area: blank;
+}
+
+
 /***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-***** ***** ***** ***** ***** ***** ***** SAVES SKILLS TOOLS***** ***** ***** ***** ***** ***** 
+***** ***** ***** ***** ***** ***** ***** SAVES SKILLS artisantools***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
 .skills {
@@ -257,14 +279,17 @@
 
   display: grid;
   grid-row-gap: 3px;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:"saves inspprof"
-                      "skilllist skilllist"
-                      "tools tools";
+  grid-template-columns: 1fr;
+  grid-template-rows: 125px 147px 267px 167px 387px;
+  grid-template-areas:"inspprof"
+                      "saves"
+                      "skilllist"
+                      "advtools"
+                      "artisantools";
 }
 
 .skills select {
+  margin-right: 5px;
   height: 20px;
   width: 40px; 
   font-size: 12px;
@@ -279,42 +304,121 @@
 }
 
 .skills input {
-  margin-left: 5px;
+  background: transparent;
+  border: none;
+  width: 20px;
+  text-align: center;
 }
 
-.skills select {
-  margin-right: 5px;
+.skills input[type="text"] {
+  border-bottom: black solid 1px;
+  text-align: center;
+}
+
+.skills input[type="checkbox"] {
+  margin-top: 3px;
 }
 
 .inspprof {
   grid-area: inspprof;
 
   display: grid;
-  grid-row-gap: 1px;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 55px 65px;
   grid-template-areas:"insp"
                       "prof";
 }
 
-.insp { grid-area: insp; }
-.prof { grid-area: prof; }
+.inspprof input {
+  background: transparent;
+  border: none;
+  width: 60px;
+  text-align: center;
+  font-size: 22pt;  
+}
+
+.inspprof span {
+  font-size: 8pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+}
+
+.insp {
+  grid-area: insp;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/inspiration.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.insp input[type="checkbox"] {
+  display:none;
+}
+
+.insp input + label {
+  display: inline-block;  
+  width: 45px;
+  height: 45px;
+  cursor: pointer; 
+  margin: 4px 0px 0px 12px; 
+  background-image: url("https://i.imgur.com/pYDAWWx.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.insp input[type="checkbox"]:checked + label {
+  background-image: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/insperation.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.insplabel {
+  float: right;
+  margin-right: 55px;
+  margin-top: 20px;
+}
+
+.prof {
+  grid-area: prof;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/proficency-bonus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.prof input {
+  margin: 11px 0px 0px 16px;
+}
+
+.proflabel {
+  float: right;
+  margin-right: 31px;
+  margin-top: 25px;
+}
+
 
 .saves {
   grid-area: saves;
   padding-bottom: 5px;
   text-align: center;
+  width: 200px;
+  justify-self: center;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr;
+  grid-template-columns: 25px 30px 1fr;
   grid-template-rows: repeat(7, 20px);
   grid-template-areas:"savelabel savelabel savelabel"
                       "strprof strsavemod strbutton"
-                      "dexprof dexsavemod dexlabel"
+                      "dexprof dexsavemod dexbutton"
                       "conprof consavemod conbutton"
                       "intprof intsavemod intbutton"
                       "wisprof wissavemod wisbutton"
-                      "chaprof chasavemod chalabel";
+                      "chaprof chasavemod chabutton";
+}
+
+.saves input[type="checkbox"] {
+  margin-left: 5px;
 }
 
 .savelabel {
@@ -329,7 +433,7 @@
 
 .dexprof { grid-area: dexprof; }
 .dexsavemod { grid-area: dexsavemod; }
-.dexlabel { grid-area: dexlabel; }
+.dexbutton { grid-area: dexbutton; }
 
 .conprof { grid-area: conprof; }
 .consavemod { grid-area: consavemod; }
@@ -345,15 +449,17 @@
 
 .chaprof { grid-area: chaprof; }
 .chasavemod { grid-area: chasavemod; }
-.chalabel { grid-area: chalabel; }
+.chabutton { grid-area: chabutton; }
+
 
 .skilllist {
   grid-area: skilllist;
   padding-bottom: 5px;
+  padding-left: 5px;
   text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 6fr 2fr;
+  grid-template-columns: 25px 30px 1fr 43px;
   grid-template-rows: repeat(13, 20px);
   grid-template-areas:"skillslabel skillslabel skillslabel skillslabel"
                       "acroprof acromod acrobutton acroability"
@@ -436,15 +542,78 @@
 .swimbutton { grid-area: swimbutton; }
 .swimability { grid-area: swimability; }
 
-.tools {
-  grid-area: tools;
+
+.advtools {
+  grid-area: advtools;
   padding-bottom: 5px;
+  padding-left: 5px;
   text-align: center;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 6fr 2fr;
+  grid-template-columns: 25px 30px 1fr 43px;
+  grid-template-rows: repeat(8, 20px);
+  grid-template-areas:"advtoolslabel advtoolslabel advtoolslabel advtoolslabel"
+                      "clmbprof clmbmod clmbbutton clmbability"
+                      "disgprof disgmod disgbutton disgability"
+                      "forgprof forgmod forgbutton forgability"
+                      "herbprof herbmod herbbutton herbability"
+                      "navgprof navgmod navgbutton navgability"
+                      "psnrprof psnrmod psnrbutton psnrability"
+                      "thvsprof thvsmod thvsbutton thvsability";
+}
+
+.advtoolslabel {
+  grid-area: advtoolslabel;   
+  margin: auto;
+}
+
+.clmbprof { grid-area: clmbprof; }
+.clmbmod { grid-area: clmbmod; }
+.clmbbutton { grid-area: clmbbutton; }
+.clmbability { grid-area: clmbability; }
+
+.disgprof { grid-area: disgprof; }
+.disgmod { grid-area: disgmod; }
+.disgbutton { grid-area: disgbutton; }
+.disgability { grid-area: disgability; }
+
+.forgprof { grid-area: forgprof; }
+.forgmod { grid-area: forgmod; }
+.forgbutton { grid-area: forgbutton; }
+.forgability { grid-area: forgability; }
+
+.herbprof { grid-area: herbprof; }
+.herbmod { grid-area: herbmod; }
+.herbbutton { grid-area: herbbutton; }
+.herbability { grid-area: herbability; }
+
+.navgprof { grid-area: navgprof; }
+.navgmod { grid-area: navgmod; }
+.navgbutton { grid-area: navgbutton; }
+.navgability { grid-area: navgability; }
+
+.psnrprof { grid-area: psnrprof; }
+.psnrmod { grid-area: psnrmod; }
+.psnrbutton { grid-area: psnrbutton; }
+.psnrability { grid-area: psnrability; }
+
+.thvsprof { grid-area: thvsprof; }
+.thvsmod { grid-area: thvsmod; }
+.thvsbutton { grid-area: thvsbutton; }
+.thvsability { grid-area: thvsability; }
+
+
+
+.artisantools {
+  grid-area: artisantools;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 25px 30px 1fr 43px;
   grid-template-rows: repeat(19, 20px);
-  grid-template-areas:"toolslabel toolslabel toolslabel toolslabel"
+  grid-template-areas:"artisantoolslabel artisantoolslabel artisantoolslabel artisantoolslabel"
                       "alchprof alchmod alchbutton alchability"
                       "brewprof brewmod brewbutton brewability"
                       "cligprof cligmod cligbutton cligability"
@@ -465,8 +634,8 @@
                       "wcrvprof wcrvmod wcrvbutton wrcvability";
 }
 
-.toolslabel {
-  grid-area: toolslabel;   
+.artisantoolslabel {
+  grid-area: artisantoolslabel;   
   margin: auto;
 }
 
@@ -571,7 +740,8 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px 1fr 1fr;
+  grid-row-gap: 3px;
+  grid-template-rows: 266px 1fr 1fr;
   grid-template-areas:"vitals"
                       "shortcuts"
                       "inventory";
@@ -583,6 +753,7 @@
   grid-area: vitals;  
 
   display: grid;
+  grid-row-gap: 5px;
   grid-template-columns: 1fr;
   grid-template-rows: 85px 85px 85px;
   grid-template-areas:"vitals-one"
@@ -603,6 +774,7 @@
   width: 100%;
 }
 
+
 .vitals-one {
   grid-area: vitals-one;
 
@@ -612,9 +784,41 @@
   grid-template-areas:"ac init speed";
 }
 
-.ac { grid-area: ac; }
-.init { grid-area: init; }
-.speed { grid-area: speed; }
+.ac { 
+  grid-area: ac; 
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/AC.svg");
+}
+
+.ac label, 
+.init label, 
+.speed label {
+  text-align: center;
+  float: left;
+  margin-top: 5px;
+}
+
+.ac input,
+.init input,
+.speed input {
+  text-align: center;
+  float: left;  
+}
+
+.init { 
+  grid-area: init;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg");
+}
+
+.speed { 
+  grid-area: speed;
+  background: url("https://raw.githubusercontent.com/mperes/Images-for-Roll20-5E-images/master/licensedsheet/vital-box.svg");
+}
+
+.ac, .init, .speed {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 
 
 .vitals-two {
@@ -623,19 +827,35 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas:"hpmax hpcurr hptemp";
+  grid-template-areas:"hptemp hpcurr hpmax";
 }
 
-.hpmax { grid-area: hpmax; }
-.hpcurr { grid-area: hpcurr; }
 .hptemp { grid-area: hptemp; }
+.hpcurr { grid-area: hpcurr; }
+.hpmax { grid-area: hpmax; }
+
+.hptemp label,
+.hpcurr label, 
+.hpmax label {
+  text-align: center;
+  float: left;
+  margin-top: 5px;
+}
+
+.hptemp input,
+.hpcurr input,
+.hpmax input {
+  text-align: center;
+  float: left;  
+}
 
 
 .vitals-three {
   grid-area: vitals-three;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:"hitdice deathsv";
 }
@@ -643,16 +863,16 @@
 
 .hitdice { grid-area: hitdice; }
 
-.deathsv {  
+.deathsv {
   grid-area: deathsv; 
 
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 25px 25px 30px;
-  grid-template-areas:"success succ1 succ2 succ3"
-                      "failure fail1 fail2 fail3"
-                      "dslabel dslabel dslabel dslabel"
+  grid-template-areas:"succs"
+                      "fails"
+                      "dslabel"
 }
 
 .deathsv label{
@@ -671,22 +891,69 @@
   padding: 3px 3px 3px 3px;
 }
 
-.success { 
-  grid-area: success; 
+.succs {
+  grid-area: succs;
+
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"success succ1 succ2 succ3"
 }
 
-.failure { 
-  grid-area: failure;
-
-}
+.success { grid-area: success; font-family: pictos; }
 .succ1 { grid-area: succ1; }
 .succ2 { grid-area: succ2; }
 .succ3 { grid-area: succ3; }
+
+.fails {
+  grid-area: fails;
+
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"failure fail1 fail2 fail3"
+}
+
+.failure { grid-area: failure; font-family: pictos; }
 .fail1 { grid-area: fail1; }
 .fail2 { grid-area: fail2; }
 .fail3 { grid-area: fail3; }
-.dslabel { grid-area: dslabel; }
 
+.succs input[type="checkbox"],
+.fails input[type="checkbox"] {
+  display:none;
+}
+
+.succs input + label,
+.fails input + label {
+  display: inline-block;  
+  width: 13px;
+  height: 13px;
+  cursor: pointer; 
+  margin: 5px 0px 0px 2px;
+  background-image: url("https://i.imgur.com/wa8p2pv.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.succs input[type="checkbox"]:checked + label {
+  background-image: url("https://i.imgur.com/VL0Ilw5.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.fails input[type="checkbox"]:checked + label {
+  background-image: url("https://i.imgur.com/DFoEgvx.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.dslabel { grid-area: dslabel; }
 
 /*---CORE - SHORTCUTS---*/
 .shortcuts {
@@ -713,11 +980,11 @@
   display: grid;
   grid-gap: 2px;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 360px auto;
+  grid-template-rows: fit-content(100px) 200px 360px auto;
   grid-template-areas:"levels"
                       "appearance"
                       "personality"
-                      "languages";
+                      "proficiencies";
 }
 
 .bio input {
@@ -728,6 +995,45 @@
 }
 
 .levels { grid-area: levels; }
+
+.levels label {
+  margin-bottom: 0px;
+}
+
+.classlevel {
+  display: grid;
+  grid-template-columns: 190px 40px;
+  grid-template-rows: 40px 40px;
+  grid-template-areas:"class level"
+                      "subclass level";
+}
+
+.class { grid-area: class; }
+.subclass { grid-area: subclass; }
+.level { grid-area: level; align-self: center;}
+
+.classlevel span {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0px;
+  font-size: 8pt;
+  padding: 0px 0px 0px 0px;
+}
+
+.class input,
+.subclass input {
+  width: 170px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.level input {
+  width: 35px;
+  height: 30px;
+  margin-right: 5px;
+  text-align: center;
+}
 
 .appearance { 
   grid-area: appearance; 
@@ -840,13 +1146,38 @@
   background-size: 100% 100%;
 }
 
+.proficiencies { grid-area: proficiencies; }
 
-.languages { grid-area: languages; }
+.proficiencies input[type="text"] {
+  height: 25px;
+  float: right;
+  width: 65%; 
+  padding: 0px;
+  margin-left: 5%;
+}
+
+.proficiencies select {
+  float: left;
+  height: 25px;
+  width: 30%; 
+  font-size: 8pt;
+  font-weight: bold;
+  text-align: right;
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  /* for Firefox */ 
+  -moz-appearance: none; 
+  /* for Safari, Chrome, Opera */ 
+  -webkit-appearance: none; 
+}
+
 
 
 /***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-***** ***** ***** ***** ***** ***** ***** GENERAL ***** *****  ***** ***** ***** ***** ***** 
+***** ***** ***** ***** ***** ***** ***** GENERAL ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
 ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
 .section {
@@ -869,3 +1200,81 @@
   cursor: pointer;
   text-align: left;
 }
+
+/***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** 
+***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+***** ***** ***** ***** ***** ***** ***** Magic CSS ***** *****  ***** ***** ***** ***** ***** 
+***** ***** ***** ***** ***** ***** ***** (dont edit) ***** ***** ***** ***** ***** ***** 
+***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** ***** *****/
+
+.repcontrol {
+  min-height: 27px; }
+
+.repcontrol .btn {
+  /*visibility: hidden;*/
+  border: medium none;
+  color: white !important;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.repcontrol .btn:focus {
+  outline: 0; }
+
+.repcontrol .repcontrol_edit,
+.repcontrol .repcontrol_add {
+  padding-left: 4px;
+  padding-right: 4px; }
+
+.repcontrol .repcontrol_edit:after {
+  content: '(';
+  visibility: visible;
+  font-family: pictos;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 12px;
+  width: 12px;
+  padding: 2px 4px 2px 4px;
+  color: black; }
+
+.editmode ~ .repcontrol .repcontrol_edit:after {
+  content: ')'; }
+
+.repcontrol .repcontrol_add:before {
+  content: '&';
+  visibility: visible;
+  font-family: pictos;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 12px;
+  width: 12px;
+  padding: 2px 4px 2px 4px;
+  color: black; }
+
+.repcontrol .repcontrol_edit:hover:after,
+.repcontrol .repcontrol_add:hover:before {
+  background-color: #EFEFEF; }
+
+.sheet-resources .repcontrol {
+  margin-top: -10px; }
+
+.itemcontrol {
+  z-index: 10; }
+
+.itemcontrol .repcontrol_del {
+  font-size: 10px;
+  margin-top: 3px;
+  padding: 0px;
+  height: 18px;
+  width: 18px; }
+
+.itemcontrol .repcontrol_move {
+  font-size: 10px;
+  margin-top: 3px;
+  padding: 0px;
+  height: 18px;
+  width: 18px; }
